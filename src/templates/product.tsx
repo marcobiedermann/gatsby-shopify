@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import Layout from "../components/Layout"
+import Product from "../components/Product"
 
 export interface ProductTemplateProps {
   pageContext: {
@@ -16,8 +17,7 @@ const ProductTemplate: FC<ProductTemplateProps> = props => {
 
   return (
     <Layout>
-      <h1>{product.title}</h1>
-      <div>{product.description}</div>
+      <Product {...product} />
     </Layout>
   )
 }

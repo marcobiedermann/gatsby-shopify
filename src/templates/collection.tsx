@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import Collection from "../components/Collection"
 import Layout from "../components/Layout"
 
 export interface CollectionTemplateProps {
@@ -16,8 +17,7 @@ const CollectionTemplate: FC<CollectionTemplateProps> = props => {
 
   return (
     <Layout>
-      <h1>{collection.title}</h1>
-      <div>{collection.description}</div>
+      <Collection {...collection} />
     </Layout>
   )
 }
