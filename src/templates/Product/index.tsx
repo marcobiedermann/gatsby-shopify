@@ -1,6 +1,6 @@
 import React, { FC } from "react"
-import Layout from "../components/Layout"
-import Product, { ProductProps } from "../components/Product"
+import Layout from "../../components/Layout"
+import Product, { ProductProps } from "../../components/Product"
 
 export interface ProductTemplateProps {
   pageContext: {

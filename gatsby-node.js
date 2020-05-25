@@ -14,6 +14,16 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allShopifyPage(sort: { fields: [title] }) {
+        edges {
+          node {
+            body
+            handle
+            shopifyId
+            title
+          }
+        }
+      }
       allShopifyProduct(sort: { fields: [title] }) {
         edges {
           node {
@@ -48,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allShopifyCollection.edges.forEach(({ node }) => {
     createPage({
       path: `/collections/${node.handle}`,
-      component: path.resolve(`./src/templates/collection.tsx`),
+      component: path.resolve(`./src/templates/Collection/index.tsx`),
       context: {
         collection: node,
         title: node.title,
@@ -56,10 +66,20 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  result.data.allShopifyPage.edges.forEach(({ node }) => {
+    createPage({
+      path: `/${node.handle}`,
+      component: path.resolve(`./src/templates/Page/index.tsx`),
+      context: {
+        page: node,
+      },
+    })
+  })
+
   result.data.allShopifyProduct.edges.forEach(({ node }) => {
     createPage({
       path: `/products/${node.handle}`,
-      component: path.resolve(`./src/templates/product.tsx`),
+      component: path.resolve(`./src/templates/Product/index.tsx`),
       context: {
         product: node,
       },

@@ -1,8 +1,8 @@
 import { graphql, Link } from "gatsby"
 import React, { FC } from "react"
-import Collection, { CollectionProps } from "../components/Collection"
-import Layout from "../components/Layout"
-import { ProductProps } from "../components/Product"
+import Collection, { CollectionProps } from "../../components/Collection"
+import Layout from "../../components/Layout"
+import { ProductProps } from "../../components/Product"
 
 export interface CollectionTemplateProps {
   data: {
