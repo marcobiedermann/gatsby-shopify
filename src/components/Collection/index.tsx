@@ -2,6 +2,7 @@ import React, { FC } from "react"
 
 export interface CollectionProps {
   description: string
+  handle: string
   shopifyId: string
   title: string
 }
