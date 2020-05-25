@@ -1,6 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 interface ShopifyCollectionQuery {
   title: string
@@ -10,7 +10,7 @@ interface ShopifyCollectionQuery {
 }
 
 interface AllShopifyCollectionQuery {
-  allShopifyProduct: {
+  allShopifyCollection: {
     edges: {
       node: ShopifyCollectionQuery
     }[]

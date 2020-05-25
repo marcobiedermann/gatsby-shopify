@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React, { FC } from "react"
-import Header from "./header"
+import Header from "../Header"
 import "./layout.css"
 
 const Layout: FC = props => {

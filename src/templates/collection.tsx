@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 export interface CollectionTemplateProps {
   pageContext: {
