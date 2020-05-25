@@ -1,13 +1,10 @@
 import React, { FC } from "react"
 import Layout from "../components/Layout"
-import Product from "../components/Product"
+import Product, { ProductProps } from "../components/Product"
 
 export interface ProductTemplateProps {
   pageContext: {
-    product: {
-      title: string
-      description: string
-    }
+    product: ProductProps
   }
 }
 

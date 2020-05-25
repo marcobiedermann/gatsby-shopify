@@ -1,13 +1,10 @@
 import React, { FC } from "react"
-import Collection from "../components/Collection"
+import Collection, { CollectionProps } from "../components/Collection"
 import Layout from "../components/Layout"
 
 export interface CollectionTemplateProps {
   pageContext: {
-    collection: {
-      title: string
-      description: string
-    }
+    collection: CollectionProps
   }
 }
 
