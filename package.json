@@ -15,13 +15,15 @@
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-source-shopify": "^3.2.8",
     "gatsby-transformer-sharp": "^2.5.3",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "@types/react": "^16.9.35",
+    "@types/react-helmet": "^6.0.0",
+    "prettier": "2.0.5",
+    "typescript": "^3.9.3"
   },
   "keywords": [
     "gatsby"
@@ -29,6 +31,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "check": "tsc --noEmit",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",

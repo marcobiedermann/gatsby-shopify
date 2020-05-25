@@ -1,0 +1,64 @@
+import { graphql, Link, useStaticQuery } from "gatsby"
+import React from "react"
+import Layout from "../components/layout"
+
+interface ShopifyProductQuery {
+  title: string
+  shopifyId: string
+  description: string
+  handle: string
+  priceRange: {
+    minVariantPrice: {
+      amount: string
+    }
+  }
+}
+
+interface AllShopifyProductQuery {
+  allShopifyProduct: {
+    edges: {
+      node: ShopifyProductQuery
+    }[]
+  }
+}
+
+const ProductsPage = () => {
+  const { allShopifyProduct } = useStaticQuery<AllShopifyProductQuery>(graphql`
+    {
+      allShopifyProduct(sort: { fields: [title] }) {
+        edges {
+          node {
+            title
+            shopifyId
+            description
+            handle
+            priceRange {
+              minVariantPrice {
+                amount
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Layout>
+      <h1>Products</h1>
+      <ul>
+        {allShopifyProduct.edges.map(edge => (
+          <li key={edge.node.shopifyId}>
+            <h3>
+              <Link to={`/product/${edge.node.handle}`}>{edge.node.title}</Link>
+              {" - "}${edge.node.priceRange.minVariantPrice.amount}
+            </h3>
+            <p>{edge.node.description}</p>
+          </li>
+        ))}
+      </ul>
+    </Layout>
+  )
+}
+
+export default ProductsPage
