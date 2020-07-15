@@ -1,5 +1,4 @@
 const path = require("path")
-const slugify = require("@sindresorhus/slugify")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -57,7 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             body
-            shopifyId
+            handle
             title
           }
         }
@@ -98,7 +97,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allShopifyShopPolicy.edges.forEach(({ node }) => {
     createPage({
-      path: `/policies/${slugify(node.title)}`,
+      path: `/policies/${node.handle}`,
       component: path.resolve(`./src/templates/Page/index.tsx`),
       context: {
         page: node,
