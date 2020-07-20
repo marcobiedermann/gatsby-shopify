@@ -1,6 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React, { FC } from "react"
-import { COLLECTIONS, PRODUCTS } from "../../constants/routes"
+import {
+  COLLECTIONS,
+  PRIVACY_POLICY,
+  PRODUCTS,
+  REFUND_POLICY,
+  TERMS_OF_SERVICE,
+} from "../../constants/routes"
 import Header from "../Header"
 import Navigation from "../Navigation"
 import "./layout.css"
@@ -26,9 +32,9 @@ const Layout: FC = props => {
       <div>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <Navigation
+            routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]}
+          />
         </footer>
       </div>
     </>

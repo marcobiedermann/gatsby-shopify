@@ -13,6 +13,17 @@ export const PRODUCTS: Route = {
   path: "/products",
 }
 
-const ROUTES: Route[] = [COLLECTIONS, PRODUCTS]
+export const PRIVACY_POLICY: Route = {
+  name: "Privacy Policy",
+  path: "/policies/privacy-policy",
+}
 
-export default ROUTES
+export const REFUND_POLICY: Route = {
+  name: "Refund Policy",
+  path: "/policies/refund-policy",
+}
+
+export const TERMS_OF_SERVICE: Route = {
+  name: "Terms of Service",
+  path: "/policies/terms-of-service",
+}
