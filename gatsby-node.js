@@ -4,6 +4,28 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
+      allShopifyArticle(sort: { fields: publishedAt, order: DESC }) {
+        edges {
+          node {
+            blog {
+              handle
+            }
+            handle
+            publishedAt
+            shopifyId
+            title
+          }
+        }
+      }
+      allShopifyBlog(sort: { fields: title }) {
+        edges {
+          node {
+            handle
+            shopifyId
+            title
+          }
+        }
+      }
       allShopifyCollection(sort: { fields: [title] }) {
         edges {
           node {
@@ -63,6 +85,30 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+  result.data.allShopifyArticle.edges.forEach(({ node }) => {
+    const { handle, shopifyId } = node
+
+    createPage({
+      path: `/blogs/${node.blog.handle}/${handle}`,
+      component: path.resolve(`./src/templates/Article/index.tsx`),
+      context: {
+        shopifyId,
+      },
+    })
+  })
+
+  result.data.allShopifyBlog.edges.forEach(({ node }) => {
+    const { handle, shopifyId } = node
+
+    createPage({
+      path: `/blogs/${handle}`,
+      component: path.resolve(`./src/templates/Blog/index.tsx`),
+      context: {
+        shopifyId,
+      },
+    })
+  })
 
   result.data.allShopifyCollection.edges.forEach(({ node }) => {
     createPage({
