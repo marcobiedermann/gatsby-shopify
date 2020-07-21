@@ -24,15 +24,15 @@ interface DataProps {
 }
 
 const BlogTemplate: FC<PageProps<DataProps>> = props => {
-  const { data } = props
+  const {
+    data: { allShopifyArticle, shopifyBlog },
+  } = props
 
   return (
     <Layout>
-      <h1>{data.shopifyBlog.title}</h1>
+      <h1>{shopifyBlog.title}</h1>
 
-      <Articles
-        articles={data.allShopifyArticle.edges.map(edge => edge.node)}
-      />
+      <Articles articles={allShopifyArticle.edges.map(edge => edge.node)} />
     </Layout>
   )
 }

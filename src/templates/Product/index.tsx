@@ -1,22 +1,78 @@
+import { graphql, PageProps } from "gatsby"
 import React, { FC } from "react"
 import Layout from "../../components/Layout"
-import Product, { ProductProps } from "../../components/Product"
+import Product from "../../components/Product"
 
-export interface ProductTemplateProps {
-  pageContext: {
-    product: ProductProps
+interface Image {
+  id: string
+  originalSrc: string
+}
+
+interface Option {
+  name: string
+  shopifyId: string
+  values: string[]
+}
+
+export interface DataProps {
+  shopifyProduct: {
+    availableForSale: boolean
+    description: string
+    handle: string
+    images: Image[]
+    options: Option[]
+    priceRange: {
+      minVariantPrice: {
+        amount: string
+      }
+      maxVariantPrice: {
+        amount: string
+      }
+    }
+    shopifyId: string
+    title: string
   }
 }
 
-const ProductTemplate: FC<ProductTemplateProps> = props => {
-  const { pageContext } = props
-  const { product } = pageContext
+const ProductTemplate: FC<PageProps<DataProps>> = props => {
+  const {
+    data: { shopifyProduct },
+  } = props
 
   return (
     <Layout>
-      <Product {...product} />
+      <Product {...shopifyProduct} />
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query ProductByShopifyId($shopifyId: String!) {
+    shopifyProduct(shopifyId: { eq: $shopifyId }) {
+      availableForSale
+      description
+      handle
+      images {
+        id
+        originalSrc
+      }
+      options {
+        shopifyId
+        name
+        values
+      }
+      priceRange {
+        minVariantPrice {
+          amount
+        }
+        maxVariantPrice {
+          amount
+        }
+      }
+      shopifyId
+      title
+    }
+  }
+`
 
 export default ProductTemplate

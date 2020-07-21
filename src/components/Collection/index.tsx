@@ -1,9 +1,14 @@
 import React, { FC } from "react"
 
-export interface CollectionProps {
-  description: string
+interface Product {
   handle: string
   shopifyId: string
+  title: string
+}
+
+export interface CollectionProps {
+  description: string
+  products: Product[]
   title: string
 }
 

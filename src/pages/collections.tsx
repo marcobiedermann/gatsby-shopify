@@ -25,10 +25,10 @@ const CollectionsPage = () => {
       allShopifyCollection(sort: { fields: [title] }) {
         edges {
           node {
-            title
-            shopifyId
             description
             handle
+            shopifyId
+            title
           }
         }
       }
@@ -39,16 +39,18 @@ const CollectionsPage = () => {
     <Layout>
       <h1>Collections</h1>
       <ul>
-        {allShopifyCollection.edges.map(edge => (
-          <li key={edge.node.shopifyId}>
-            <h3>
-              <Link to={`/collections/${edge.node.handle}`}>
-                {edge.node.title}
-              </Link>
-            </h3>
-            <p>{edge.node.description}</p>
-          </li>
-        ))}
+        {allShopifyCollection.edges.map(({ node }) => {
+          const { description, handle, title, shopifyId } = node
+
+          return (
+            <li key={shopifyId}>
+              <h3>
+                <Link to={`/collections/${handle}`}>{title}</Link>
+              </h3>
+              <p>{description}</p>
+            </li>
+          )
+        })}
       </ul>
     </Layout>
   )

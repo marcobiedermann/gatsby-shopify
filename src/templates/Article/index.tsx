@@ -14,14 +14,14 @@ interface DataProps {
 }
 
 const ArticleTemplate: FC<PageProps<DataProps>> = props => {
-  const { data } = props
+  const {
+    data: { shopifyArticle },
+  } = props
 
   return (
     <Layout>
-      <h1>{data.shopifyArticle.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{ __html: data.shopifyArticle.contentHtml }}
-      />
+      <h1>{shopifyArticle.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: shopifyArticle.contentHtml }} />
     </Layout>
   )
 }

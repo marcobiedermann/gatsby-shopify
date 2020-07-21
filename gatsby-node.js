@@ -11,9 +11,7 @@ exports.createPages = async ({ graphql, actions }) => {
               handle
             }
             handle
-            publishedAt
             shopifyId
-            title
           }
         }
       }
@@ -22,64 +20,38 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             handle
             shopifyId
-            title
           }
         }
       }
       allShopifyCollection(sort: { fields: [title] }) {
         edges {
           node {
-            title
-            shopifyId
             handle
-            description
+            shopifyId
           }
         }
       }
       allShopifyPage(sort: { fields: [title] }) {
         edges {
           node {
-            body
             handle
             shopifyId
-            title
           }
         }
       }
       allShopifyProduct(sort: { fields: [title] }) {
         edges {
           node {
-            availableForSale
-            description
             handle
-            images {
-              id
-              originalSrc
-            }
-            options {
-              shopifyId
-              name
-              values
-            }
-            priceRange {
-              minVariantPrice {
-                amount
-              }
-              maxVariantPrice {
-                amount
-              }
-            }
             shopifyId
-            title
           }
         }
       }
       allShopifyShopPolicy {
         edges {
           node {
-            body
             handle
-            title
+            shopifyId
           }
         }
       }
@@ -87,10 +59,10 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   result.data.allShopifyArticle.edges.forEach(({ node }) => {
-    const { handle, shopifyId } = node
+    const { blog, handle, shopifyId } = node
 
     createPage({
-      path: `/blogs/${node.blog.handle}/${handle}`,
+      path: `/blogs/${blog.handle}/${handle}`,
       component: path.resolve(`./src/templates/Article/index.tsx`),
       context: {
         shopifyId,
@@ -111,42 +83,49 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   result.data.allShopifyCollection.edges.forEach(({ node }) => {
+    const { handle, shopifyId } = node
+
     createPage({
-      path: `/collections/${node.handle}`,
+      path: `/collections/${handle}`,
       component: path.resolve(`./src/templates/Collection/index.tsx`),
       context: {
-        collection: node,
-        title: node.title,
+        shopifyId,
       },
     })
   })
 
   result.data.allShopifyPage.edges.forEach(({ node }) => {
+    const { handle, shopifyId } = node
+
     createPage({
-      path: `/${node.handle}`,
+      path: `/${handle}`,
       component: path.resolve(`./src/templates/Page/index.tsx`),
       context: {
-        page: node,
+        shopifyId,
       },
     })
   })
 
   result.data.allShopifyProduct.edges.forEach(({ node }) => {
+    const { handle, shopifyId } = node
+
     createPage({
-      path: `/products/${node.handle}`,
+      path: `/products/${handle}`,
       component: path.resolve(`./src/templates/Product/index.tsx`),
       context: {
-        product: node,
+        shopifyId,
       },
     })
   })
 
   result.data.allShopifyShopPolicy.edges.forEach(({ node }) => {
+    const { handle, shopifyId } = node
+
     createPage({
-      path: `/policies/${node.handle}`,
+      path: `/policies/${handle}`,
       component: path.resolve(`./src/templates/Page/index.tsx`),
       context: {
-        page: node,
+        shopifyId,
       },
     })
   })

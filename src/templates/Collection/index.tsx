@@ -1,28 +1,30 @@
-import { graphql, Link } from "gatsby"
+import { graphql, Link, PageProps } from "gatsby"
 import React, { FC } from "react"
-import Collection, { CollectionProps } from "../../components/Collection"
+import Collection from "../../components/Collection"
 import Layout from "../../components/Layout"
-import { ProductProps } from "../../components/Product"
 
-export interface CollectionTemplateProps {
-  data: {
-    shopifyCollection: {
-      products: ProductProps[]
-    }
-  }
-  pageContext: {
-    collection: CollectionProps
+interface Product {
+  handle: string
+  shopifyId: string
+  title: string
+}
+
+interface DataProps {
+  shopifyCollection: {
+    description: string
+    products: Product[]
+    title: string
   }
 }
 
-const CollectionTemplate: FC<CollectionTemplateProps> = props => {
-  const { data, pageContext } = props
-  const { shopifyCollection } = data
-  const { collection } = pageContext
+const CollectionTemplate: FC<PageProps<DataProps>> = props => {
+  const {
+    data: { shopifyCollection },
+  } = props
 
   return (
     <Layout>
-      <Collection {...collection} />
+      <Collection {...shopifyCollection} />
       <ul>
         {shopifyCollection.products.map(product => (
           <li key={product.shopifyId}>
@@ -36,14 +38,16 @@ const CollectionTemplate: FC<CollectionTemplateProps> = props => {
   )
 }
 
-export const collectionQuery = graphql`
-  query ShopifyCollectionByTitle($title: String!) {
-    shopifyCollection(title: { eq: $title }) {
+export const pageQuery = graphql`
+  query CollectionByShopifyId($shopifyId: String!) {
+    shopifyCollection(shopifyId: { eq: $shopifyId }) {
+      description
       products {
         handle
         shopifyId
         title
       }
+      title
     }
   }
 `

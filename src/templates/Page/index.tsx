@@ -1,22 +1,38 @@
+import { graphql, PageProps } from "gatsby"
 import React, { FC } from "react"
 import Layout from "../../components/Layout"
-import Page, { PageProps } from "../../components/Page"
+import Page from "../../components/Page"
 
-export interface PageTemplateProps {
-  pageContext: {
-    page: PageProps
+export interface DataProps {
+  shopifyPage: {
+    body: string
+    handle: string
+    shopifyId: string
+    title: string
   }
 }
 
-const PageTemplate: FC<PageTemplateProps> = props => {
-  const { pageContext } = props
-  const { page } = pageContext
+const PageTemplate: FC<PageProps<DataProps>> = props => {
+  const {
+    data: { shopifyPage },
+  } = props
 
   return (
     <Layout>
-      <Page {...page} />
+      <Page {...shopifyPage} />
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query PageByShopifyId($shopifyId: String!) {
+    shopifyPage(shopifyId: { eq: $shopifyId }) {
+      body
+      handle
+      shopifyId
+      title
+    }
+  }
+`
 
 export default PageTemplate
