@@ -1,6 +1,7 @@
 import { Field, Form, Formik } from "formik"
 import React, { FC } from "react"
 import Image from "../Image"
+import Tags from "../Tags"
 
 interface Image {
   id: string
@@ -28,16 +29,18 @@ export interface ProductProps {
     }
   }
   shopifyId: string
+  tags: string[]
   title: string
 }
 
 const Product: FC<ProductProps> = props => {
-  const { description, images, options, title } = props
+  const { description, images, options, tags, title } = props
 
   return (
     <div>
       <h2>{title}</h2>
       <p>{description}</p>
+      <Tags tags={tags} />
       <ul>
         {images.map(image => (
           <li key={image.id}>

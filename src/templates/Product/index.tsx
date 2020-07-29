@@ -30,6 +30,7 @@ export interface DataProps {
       }
     }
     shopifyId: string
+    tags: string[]
     title: string
   }
 }
@@ -70,6 +71,7 @@ export const pageQuery = graphql`
         }
       }
       shopifyId
+      tags
       title
     }
   }
