@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from "formik"
 import React, { FC } from "react"
+import Image from "../Image"
 
 interface Image {
   id: string
@@ -40,7 +41,7 @@ const Product: FC<ProductProps> = props => {
       <ul>
         {images.map(image => (
           <li key={image.id}>
-            <img src={image.originalSrc} alt={title} />
+            <Image src={image.originalSrc} alt={title} />
           </li>
         ))}
       </ul>

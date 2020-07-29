@@ -1,12 +1,16 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React from "react"
+import Image from "../components/Image"
 import Layout from "../components/Layout"
 
 interface ShopifyCollectionQuery {
-  title: string
-  shopifyId: string
   description: string
   handle: string
+  image: {
+    src: string
+  }
+  shopifyId: string
+  title: string
 }
 
 interface AllShopifyCollectionQuery {
@@ -27,6 +31,9 @@ const CollectionsPage = () => {
           node {
             description
             handle
+            image {
+              src
+            }
             shopifyId
             title
           }
@@ -40,13 +47,14 @@ const CollectionsPage = () => {
       <h1>Collections</h1>
       <ul>
         {allShopifyCollection.edges.map(({ node }) => {
-          const { description, handle, title, shopifyId } = node
+          const { description, handle, image, title, shopifyId } = node
 
           return (
             <li key={shopifyId}>
               <h3>
                 <Link to={`/collections/${handle}`}>{title}</Link>
               </h3>
+              <Image src={image.src} alt={title} />
               <p>{description}</p>
             </li>
           )
