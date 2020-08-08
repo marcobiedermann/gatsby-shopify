@@ -64,7 +64,7 @@ const Product: FC<ProductProps> = props => {
                 <label htmlFor={option.name}>{option.name}</label>
                 <Field as="select" name={option.name} id={option.name}>
                   {option.values.map(value => (
-                    <option key={`${name}-${value}`} value={value}>
+                    <option key={`${option.name}-${value}`} value={value}>
                       {value}
                     </option>
                   ))}
