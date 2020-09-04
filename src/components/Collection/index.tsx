@@ -9,6 +9,7 @@ interface Product {
 export interface CollectionProps {
   description: string
   products: Product[]
+  shopifyId: string
   title: string
 }
 

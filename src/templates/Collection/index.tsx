@@ -13,6 +13,7 @@ interface DataProps {
   shopifyCollection: {
     description: string
     products: Product[]
+    shopifyId: string
     title: string
   }
 }
@@ -47,6 +48,7 @@ export const pageQuery = graphql`
         shopifyId
         title
       }
+      shopifyId
       title
     }
   }
