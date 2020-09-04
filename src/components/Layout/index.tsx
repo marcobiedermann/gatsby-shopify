@@ -9,7 +9,6 @@ import {
 } from "../../constants/routes"
 import Header from "../Header"
 import Navigation from "../Navigation"
-import "./layout.css"
 
 const Layout: FC = props => {
   const { children } = props
