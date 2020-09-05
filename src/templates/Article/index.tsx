@@ -16,10 +16,11 @@ interface DataProps {
 const ArticleTemplate: FC<PageProps<DataProps>> = props => {
   const {
     data: { shopifyArticle },
+    location,
   } = props
 
   return (
-    <Layout>
+    <Layout location={location}>
       <h1>{shopifyArticle.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: shopifyArticle.contentHtml }} />
     </Layout>

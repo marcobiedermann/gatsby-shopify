@@ -1,5 +1,5 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
-import React from "react"
+import { graphql, Link, PageProps, useStaticQuery } from "gatsby"
+import React, { FC } from "react"
 import Image from "../components/Image"
 import Layout from "../components/Layout"
 
@@ -21,7 +21,8 @@ interface AllShopifyCollectionQuery {
   }
 }
 
-const CollectionsPage = () => {
+const CollectionsPage: FC<PageProps> = props => {
+  const { location } = props
   const { allShopifyCollection } = useStaticQuery<
     AllShopifyCollectionQuery
   >(graphql`
@@ -43,7 +44,7 @@ const CollectionsPage = () => {
   `)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <h1>Collections</h1>
       <ul>
         {allShopifyCollection.edges.map(({ node }) => {

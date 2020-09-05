@@ -21,10 +21,11 @@ interface DataProps {
 const CollectionTemplate: FC<PageProps<DataProps>> = props => {
   const {
     data: { shopifyCollection },
+    location,
   } = props
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Collection {...shopifyCollection} />
       <ul>
         {shopifyCollection.products.map(product => (

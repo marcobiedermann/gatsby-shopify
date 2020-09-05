@@ -15,10 +15,11 @@ export interface DataProps {
 const PageTemplate: FC<PageProps<DataProps>> = props => {
   const {
     data: { shopifyPage },
+    location,
   } = props
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Page {...shopifyPage} />
     </Layout>
   )

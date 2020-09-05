@@ -7,11 +7,16 @@ import {
   REFUND_POLICY,
   TERMS_OF_SERVICE,
 } from "../../constants/routes"
+import Breadcrumb from "../Breadcrumb"
 import Header from "../Header"
 import Navigation from "../Navigation"
 
-const Layout: FC = props => {
-  const { children } = props
+export interface LayoutProps {
+  location: any
+}
+
+const Layout: FC<LayoutProps> = props => {
+  const { children, location } = props
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,6 +27,16 @@ const Layout: FC = props => {
     }
   `)
 
+  const segments = location.pathname.split("/").filter(segment => segment)
+  const breadcrumbItems = segments.map((segment, index) => {
+    const path = `/${segments.slice(0, index + 1).join("/")}`
+
+    return {
+      name: segment,
+      path,
+    }
+  })
+
   return (
     <>
       <Header>
@@ -29,7 +44,10 @@ const Layout: FC = props => {
         <Navigation routes={[COLLECTIONS, PRODUCTS]} />
       </Header>
       <div>
-        <main>{children}</main>
+        <main>
+          <Breadcrumb breadcrumbItems={breadcrumbItems} />
+          {children}
+        </main>
         <footer>
           <Navigation
             routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]}

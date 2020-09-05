@@ -38,10 +38,11 @@ export interface DataProps {
 const ProductTemplate: FC<PageProps<DataProps>> = props => {
   const {
     data: { shopifyProduct },
+    location,
   } = props
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Product {...shopifyProduct} />
     </Layout>
   )

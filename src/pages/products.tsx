@@ -1,5 +1,5 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
-import React from "react"
+import { graphql, Link, PageProps, useStaticQuery } from "gatsby"
+import React, { FC } from "react"
 import Layout from "../components/Layout"
 
 interface ShopifyProductQuery {
@@ -22,7 +22,8 @@ interface AllShopifyProductQuery {
   }
 }
 
-const ProductsPage = () => {
+const ProductsPage: FC<PageProps> = props => {
+  const { location } = props
   const { allShopifyProduct } = useStaticQuery<AllShopifyProductQuery>(graphql`
     {
       allShopifyProduct(sort: { fields: [title] }) {
@@ -44,7 +45,7 @@ const ProductsPage = () => {
   `)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <h1>Products</h1>
       <ul>
         {allShopifyProduct.edges.map(edge => (
