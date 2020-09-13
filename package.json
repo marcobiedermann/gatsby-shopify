@@ -33,12 +33,11 @@
   "scripts": {
     "build": "gatsby build",
     "check": "tsc --noEmit",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "develop": "gatsby develop",
+    "format": "prettier --write .",
+    "serve": "gatsby serve",
+    "start": "npm run develop"
   },
   "repository": {
     "type": "git",
