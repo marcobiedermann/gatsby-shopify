@@ -1,3 +1,4 @@
+import { WindowLocation } from "@reach/router"
 import { graphql, useStaticQuery } from "gatsby"
 import React, { FC } from "react"
 import {
@@ -12,7 +13,7 @@ import Header from "../Header"
 import Navigation from "../Navigation"
 
 export interface LayoutProps {
-  location: any
+  location: WindowLocation<WindowLocation["state"]>
 }
 
 const Layout: FC<LayoutProps> = props => {
