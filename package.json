@@ -12,7 +12,7 @@
     "gatsby-plugin-manifest": "^2.4.30",
     "gatsby-plugin-offline": "^3.2.28",
     "gatsby-plugin-react-helmet": "^3.3.12",
-    "gatsby-plugin-sharp": "^2.6.36",
+    "gatsby-plugin-sharp": "^2.6.37",
     "gatsby-source-filesystem": "^2.3.30",
     "gatsby-source-shopify": "^3.2.33",
     "gatsby-transformer-sharp": "^2.5.16",
