@@ -1,21 +1,21 @@
-import { graphql, useStaticQuery } from "gatsby"
-import React, { FC } from "react"
-import { Helmet } from "react-helmet"
+import { graphql, useStaticQuery } from 'gatsby';
+import React, { FC } from 'react';
+import { Helmet } from 'react-helmet';
 
 export interface Meta {
-  content: string
-  name: string
+  content: string;
+  name: string;
 }
 
 export interface SEOProps {
-  description?: string
-  lang?: string
-  meta?: Meta[]
-  title: string
+  description?: string;
+  lang?: string;
+  meta?: Meta[];
+  title: string;
 }
 
-const SEO: FC<SEOProps> = props => {
-  const { description, lang = "en", meta = [], title } = props
+const SEO: FC<SEOProps> = (props) => {
+  const { description, lang = 'en', meta = [], title } = props;
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,10 +27,10 @@ const SEO: FC<SEOProps> = props => {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -74,7 +74,7 @@ const SEO: FC<SEOProps> = props => {
         },
       ].concat(meta)}
     />
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;

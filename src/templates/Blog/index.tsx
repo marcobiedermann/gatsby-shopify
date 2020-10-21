@@ -1,42 +1,42 @@
-import { graphql, PageProps } from "gatsby"
-import React, { FC } from "react"
-import Articles from "../../components/Articles"
-import Layout from "../../components/Layout"
+import { graphql, PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Articles from '../../components/Articles';
+import Layout from '../../components/Layout';
 
 interface ShopifyArticle {
   node: {
     blog: {
-      handle: string
-    }
-    handle: string
-    shopifyId: string
-    title: string
-  }
+      handle: string;
+    };
+    handle: string;
+    shopifyId: string;
+    title: string;
+  };
 }
 
 interface DataProps {
   allShopifyArticle: {
-    edges: ShopifyArticle[]
-  }
+    edges: ShopifyArticle[];
+  };
   shopifyBlog: {
-    title: string
-  }
+    title: string;
+  };
 }
 
-const BlogTemplate: FC<PageProps<DataProps>> = props => {
+const BlogTemplate: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { allShopifyArticle, shopifyBlog },
     location,
-  } = props
+  } = props;
 
   return (
     <Layout location={location}>
       <h1>{shopifyBlog.title}</h1>
 
-      <Articles articles={allShopifyArticle.edges.map(edge => edge.node)} />
+      <Articles articles={allShopifyArticle.edges.map((edge) => edge.node)} />
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query BlogByShopifyId($shopifyId: String!) {
@@ -56,6 +56,6 @@ export const pageQuery = graphql`
       title
     }
   }
-`
+`;
 
-export default BlogTemplate
+export default BlogTemplate;

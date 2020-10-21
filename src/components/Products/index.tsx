@@ -1,22 +1,22 @@
-import React, { FC } from "react"
-import Product, { ProductProps } from "../Product"
+import React, { FC } from 'react';
+import Product, { ProductProps } from '../Product';
 
 export interface ProductsProps {
-  products: ProductProps[]
+  products: ProductProps[];
 }
 
-const Products: FC<ProductsProps> = props => {
-  const { products } = props
+const Products: FC<ProductsProps> = (props) => {
+  const { products } = props;
 
   return (
     <ul>
-      {products.map(product => (
+      {products.map((product) => (
         <li key={product.shopifyId}>
           <Product {...product} />
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;

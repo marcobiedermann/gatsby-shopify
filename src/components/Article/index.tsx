@@ -1,17 +1,17 @@
-import { Link } from "gatsby"
-import React, { FC } from "react"
+import { Link } from 'gatsby';
+import React, { FC } from 'react';
 
 export interface ArticleProps {
   blog: {
-    handle: string
-  }
-  handle: string
-  shopifyId: string
-  title: string
+    handle: string;
+  };
+  handle: string;
+  shopifyId: string;
+  title: string;
 }
 
-const Article: FC<ArticleProps> = props => {
-  const { blog, handle, title } = props
+const Article: FC<ArticleProps> = (props) => {
+  const { blog, handle, title } = props;
 
   return (
     <article>
@@ -19,7 +19,7 @@ const Article: FC<ArticleProps> = props => {
         <Link to={`/blogs/${blog.handle}/${handle}`}>{title}</Link>
       </h3>
     </article>
-  )
-}
+  );
+};
 
-export default Article
+export default Article;

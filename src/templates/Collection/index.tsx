@@ -1,34 +1,34 @@
-import { graphql, Link, PageProps } from "gatsby"
-import React, { FC } from "react"
-import Collection from "../../components/Collection"
-import Layout from "../../components/Layout"
+import { graphql, Link, PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Collection from '../../components/Collection';
+import Layout from '../../components/Layout';
 
 interface Product {
-  handle: string
-  shopifyId: string
-  title: string
+  handle: string;
+  shopifyId: string;
+  title: string;
 }
 
 interface DataProps {
   shopifyCollection: {
-    description: string
-    products: Product[]
-    shopifyId: string
-    title: string
-  }
+    description: string;
+    products: Product[];
+    shopifyId: string;
+    title: string;
+  };
 }
 
-const CollectionTemplate: FC<PageProps<DataProps>> = props => {
+const CollectionTemplate: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { shopifyCollection },
     location,
-  } = props
+  } = props;
 
   return (
     <Layout location={location}>
       <Collection {...shopifyCollection} />
       <ul>
-        {shopifyCollection.products.map(product => (
+        {shopifyCollection.products.map((product) => (
           <li key={product.shopifyId}>
             <h2>
               <Link to={`/products/${product.handle}`}>{product.title}</Link>
@@ -37,8 +37,8 @@ const CollectionTemplate: FC<PageProps<DataProps>> = props => {
         ))}
       </ul>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query CollectionByShopifyId($shopifyId: String!) {
@@ -53,6 +53,6 @@ export const pageQuery = graphql`
       title
     }
   }
-`
+`;
 
-export default CollectionTemplate
+export default CollectionTemplate;

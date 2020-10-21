@@ -1,7 +1,7 @@
-import React, { FC } from "react"
+import React, { FC } from 'react';
 
-const Tag: FC = props => {
-  return <span {...props} />
-}
+const Tag: FC = (props) => {
+  return <span {...props} />;
+};
 
-export default Tag
+export default Tag;

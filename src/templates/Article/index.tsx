@@ -1,34 +1,34 @@
-import { graphql, PageProps } from "gatsby"
-import React, { FC } from "react"
-import Layout from "../../components/Layout"
+import { graphql, PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Layout from '../../components/Layout';
 
 interface Author {
-  name: string
+  name: string;
 }
 
 interface Comment {
-  author: Author
-  contentHtml: string
-  shopifyId: string
+  author: Author;
+  contentHtml: string;
+  shopifyId: string;
 }
 
 interface DataProps {
   shopifyArticle: {
     author: {
-      name: string
-    }
-    comments: Comment[]
-    contentHtml: string
-    publishedAt: string
-    title: string
-  }
+      name: string;
+    };
+    comments: Comment[];
+    contentHtml: string;
+    publishedAt: string;
+    title: string;
+  };
 }
 
-const ArticleTemplate: FC<PageProps<DataProps>> = props => {
+const ArticleTemplate: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { shopifyArticle },
     location,
-  } = props
+  } = props;
 
   return (
     <Layout location={location}>
@@ -39,12 +39,10 @@ const ArticleTemplate: FC<PageProps<DataProps>> = props => {
         <div dangerouslySetInnerHTML={{ __html: shopifyArticle.contentHtml }} />
         <h2>{shopifyArticle.comments.length} Comment</h2>
         <ol>
-          {shopifyArticle.comments.map(comment => (
+          {shopifyArticle.comments.map((comment) => (
             <li key={comment.shopifyId}>
               <div>
-                <div
-                  dangerouslySetInnerHTML={{ __html: comment.contentHtml }}
-                />
+                <div dangerouslySetInnerHTML={{ __html: comment.contentHtml }} />
                 <div>
                   <span>{comment.author.name}</span>
                 </div>
@@ -54,8 +52,8 @@ const ArticleTemplate: FC<PageProps<DataProps>> = props => {
         </ol>
       </article>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query ArticleByShopifyId($shopifyId: String!) {
@@ -75,6 +73,6 @@ export const pageQuery = graphql`
       title
     }
   }
-`
+`;
 
-export default ArticleTemplate
+export default ArticleTemplate;

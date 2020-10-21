@@ -1,7 +1,7 @@
-import React, { FC, ImgHTMLAttributes } from "react"
+import React, { FC, ImgHTMLAttributes } from 'react';
 
-const Image: FC<ImgHTMLAttributes<HTMLImageElement>> = props => {
-  return <img {...props} />
-}
+const Image: FC<ImgHTMLAttributes<HTMLImageElement>> = (props) => {
+  return <img {...props} />;
+};
 
-export default Image
+export default Image;

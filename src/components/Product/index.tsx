@@ -1,40 +1,40 @@
-import { Field, Form, Formik } from "formik"
-import React, { FC } from "react"
-import Image from "../Image"
-import Tags from "../Tags"
+import { Field, Form, Formik } from 'formik';
+import React, { FC } from 'react';
+import Image from '../Image';
+import Tags from '../Tags';
 
 interface Image {
-  id: string
-  originalSrc: string
+  id: string;
+  originalSrc: string;
 }
 
 interface Option {
-  name: string
-  shopifyId: string
-  values: string[]
+  name: string;
+  shopifyId: string;
+  values: string[];
 }
 
 export interface ProductProps {
-  availableForSale: boolean
-  description: string
-  handle: string
-  images: Image[]
-  options: Option[]
+  availableForSale: boolean;
+  description: string;
+  handle: string;
+  images: Image[];
+  options: Option[];
   priceRange: {
     minVariantPrice: {
-      amount: string
-    }
+      amount: string;
+    };
     maxVariantPrice: {
-      amount: string
-    }
-  }
-  shopifyId: string
-  tags: string[]
-  title: string
+      amount: string;
+    };
+  };
+  shopifyId: string;
+  tags: string[];
+  title: string;
 }
 
-const Product: FC<ProductProps> = props => {
-  const { description, images, options, tags, title } = props
+const Product: FC<ProductProps> = (props) => {
+  const { description, images, options, tags, title } = props;
 
   return (
     <div>
@@ -42,7 +42,7 @@ const Product: FC<ProductProps> = props => {
       <p>{description}</p>
       <Tags tags={tags} />
       <ul>
-        {images.map(image => (
+        {images.map((image) => (
           <li key={image.id}>
             <Image src={image.originalSrc} alt={title} />
           </li>
@@ -53,17 +53,17 @@ const Product: FC<ProductProps> = props => {
           quantity: 1,
         }}
         onSubmit={(values, actions) => {
-          console.log({ values })
-          actions.setSubmitting(false)
+          console.log({ values });
+          actions.setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
           <Form>
-            {options.map(option => (
+            {options.map((option) => (
               <div key={option.shopifyId}>
                 <label htmlFor={option.name}>{option.name}</label>
                 <Field as="select" name={option.name} id={option.name}>
-                  {option.values.map(value => (
+                  {option.values.map((value) => (
                     <option key={`${option.name}-${value}`} value={value}>
                       {value}
                     </option>
@@ -84,7 +84,7 @@ const Product: FC<ProductProps> = props => {
         )}
       </Formik>
     </div>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

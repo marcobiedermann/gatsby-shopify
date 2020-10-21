@@ -1,8 +1,8 @@
-const dotenv = require("dotenv")
+const dotenv = require('dotenv');
 
 dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -34,7 +34,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-shopify",
+      resolve: 'gatsby-source-shopify',
       options: {
         shopName: process.env.SHOPIFY_SHOP_NAME,
         accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
@@ -44,4 +44,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

@@ -1,52 +1,52 @@
-import { graphql, PageProps } from "gatsby"
-import React, { FC } from "react"
-import Layout from "../../components/Layout"
-import Product from "../../components/Product"
+import { graphql, PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Layout from '../../components/Layout';
+import Product from '../../components/Product';
 
 interface Image {
-  id: string
-  originalSrc: string
+  id: string;
+  originalSrc: string;
 }
 
 interface Option {
-  name: string
-  shopifyId: string
-  values: string[]
+  name: string;
+  shopifyId: string;
+  values: string[];
 }
 
 export interface DataProps {
   shopifyProduct: {
-    availableForSale: boolean
-    description: string
-    handle: string
-    images: Image[]
-    options: Option[]
+    availableForSale: boolean;
+    description: string;
+    handle: string;
+    images: Image[];
+    options: Option[];
     priceRange: {
       minVariantPrice: {
-        amount: string
-      }
+        amount: string;
+      };
       maxVariantPrice: {
-        amount: string
-      }
-    }
-    shopifyId: string
-    tags: string[]
-    title: string
-  }
+        amount: string;
+      };
+    };
+    shopifyId: string;
+    tags: string[];
+    title: string;
+  };
 }
 
-const ProductTemplate: FC<PageProps<DataProps>> = props => {
+const ProductTemplate: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { shopifyProduct },
     location,
-  } = props
+  } = props;
 
   return (
     <Layout location={location}>
       <Product {...shopifyProduct} />
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query ProductByShopifyId($shopifyId: String!) {
@@ -76,6 +76,6 @@ export const pageQuery = graphql`
       title
     }
   }
-`
+`;
 
-export default ProductTemplate
+export default ProductTemplate;

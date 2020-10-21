@@ -1,11 +1,11 @@
-import { Link, PageProps } from "gatsby"
-import React, { FC } from "react"
-import Image from "../components/Image"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import { Link, PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Image from '../components/Image';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
-const IndexPage: FC<PageProps> = props => {
-  const { location } = props
+const IndexPage: FC<PageProps> = (props) => {
+  const { location } = props;
 
   return (
     <Layout location={location}>
@@ -18,7 +18,7 @@ const IndexPage: FC<PageProps> = props => {
       </div>
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

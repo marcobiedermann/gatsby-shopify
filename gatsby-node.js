@@ -1,7 +1,7 @@
-const path = require("path")
+const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   const result = await graphql(`
     query {
       allShopifyArticle(sort: { fields: publishedAt, order: DESC }) {
@@ -56,10 +56,10 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   result.data.allShopifyArticle.edges.forEach(({ node }) => {
-    const { blog, handle, shopifyId } = node
+    const { blog, handle, shopifyId } = node;
 
     createPage({
       path: `/blogs/${blog.handle}/${handle}`,
@@ -67,11 +67,11 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         shopifyId,
       },
-    })
-  })
+    });
+  });
 
   result.data.allShopifyBlog.edges.forEach(({ node }) => {
-    const { handle, shopifyId } = node
+    const { handle, shopifyId } = node;
 
     createPage({
       path: `/blogs/${handle}`,
@@ -79,11 +79,11 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         shopifyId,
       },
-    })
-  })
+    });
+  });
 
   result.data.allShopifyCollection.edges.forEach(({ node }) => {
-    const { handle, shopifyId } = node
+    const { handle, shopifyId } = node;
 
     createPage({
       path: `/collections/${handle}`,
@@ -91,11 +91,11 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         shopifyId,
       },
-    })
-  })
+    });
+  });
 
   result.data.allShopifyPage.edges.forEach(({ node }) => {
-    const { handle, shopifyId } = node
+    const { handle, shopifyId } = node;
 
     createPage({
       path: `/${handle}`,
@@ -103,11 +103,11 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         shopifyId,
       },
-    })
-  })
+    });
+  });
 
   result.data.allShopifyProduct.edges.forEach(({ node }) => {
-    const { handle, shopifyId } = node
+    const { handle, shopifyId } = node;
 
     createPage({
       path: `/products/${handle}`,
@@ -115,11 +115,11 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         shopifyId,
       },
-    })
-  })
+    });
+  });
 
   result.data.allShopifyShopPolicy.edges.forEach(({ node }) => {
-    const { handle, shopifyId } = node
+    const { handle, shopifyId } = node;
 
     createPage({
       path: `/policies/${handle}`,
@@ -127,6 +127,6 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         shopifyId,
       },
-    })
-  })
-}
+    });
+  });
+};

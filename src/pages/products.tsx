@@ -1,29 +1,29 @@
-import { graphql, Link, PageProps, useStaticQuery } from "gatsby"
-import React, { FC } from "react"
-import Layout from "../components/Layout"
+import { graphql, Link, PageProps, useStaticQuery } from 'gatsby';
+import React, { FC } from 'react';
+import Layout from '../components/Layout';
 
 interface ShopifyProductQuery {
-  title: string
-  shopifyId: string
-  description: string
-  handle: string
+  title: string;
+  shopifyId: string;
+  description: string;
+  handle: string;
   priceRange: {
     minVariantPrice: {
-      amount: string
-    }
-  }
+      amount: string;
+    };
+  };
 }
 
 interface AllShopifyProductQuery {
   allShopifyProduct: {
     edges: {
-      node: ShopifyProductQuery
-    }[]
-  }
+      node: ShopifyProductQuery;
+    }[];
+  };
 }
 
-const ProductsPage: FC<PageProps> = props => {
-  const { location } = props
+const ProductsPage: FC<PageProps> = (props) => {
+  const { location } = props;
   const { allShopifyProduct } = useStaticQuery<AllShopifyProductQuery>(graphql`
     {
       allShopifyProduct(sort: { fields: [title] }) {
@@ -42,26 +42,24 @@ const ProductsPage: FC<PageProps> = props => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout location={location}>
       <h1>Products</h1>
       <ul>
-        {allShopifyProduct.edges.map(edge => (
+        {allShopifyProduct.edges.map((edge) => (
           <li key={edge.node.shopifyId}>
             <h3>
-              <Link to={`/products/${edge.node.handle}`}>
-                {edge.node.title}
-              </Link>
-              {" - "}${edge.node.priceRange.minVariantPrice.amount}
+              <Link to={`/products/${edge.node.handle}`}>{edge.node.title}</Link>
+              {' - '}${edge.node.priceRange.minVariantPrice.amount}
             </h3>
             <p>{edge.node.description}</p>
           </li>
         ))}
       </ul>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;

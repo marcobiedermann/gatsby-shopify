@@ -1,29 +1,29 @@
 export interface Route {
-  name: string
-  path: string
+  name: string;
+  path: string;
 }
 
 export const COLLECTIONS: Route = {
-  name: "Collections",
-  path: "/collections",
-}
+  name: 'Collections',
+  path: '/collections',
+};
 
 export const PRODUCTS: Route = {
-  name: "Products",
-  path: "/products",
-}
+  name: 'Products',
+  path: '/products',
+};
 
 export const PRIVACY_POLICY: Route = {
-  name: "Privacy Policy",
-  path: "/policies/privacy-policy",
-}
+  name: 'Privacy Policy',
+  path: '/policies/privacy-policy',
+};
 
 export const REFUND_POLICY: Route = {
-  name: "Refund Policy",
-  path: "/policies/refund-policy",
-}
+  name: 'Refund Policy',
+  path: '/policies/refund-policy',
+};
 
 export const TERMS_OF_SERVICE: Route = {
-  name: "Terms of Service",
-  path: "/policies/terms-of-service",
-}
+  name: 'Terms of Service',
+  path: '/policies/terms-of-service',
+};

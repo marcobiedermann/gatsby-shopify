@@ -1,10 +1,10 @@
-import { Link, PageProps } from "gatsby"
-import React, { FC } from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import { Link, PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
-const SecondPage: FC<PageProps> = props => {
-  const { location } = props
+const SecondPage: FC<PageProps> = (props) => {
+  const { location } = props;
 
   return (
     <Layout location={location}>
@@ -13,7 +13,7 @@ const SecondPage: FC<PageProps> = props => {
       <p>Welcome to page 2 ({props.path})</p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
-  )
-}
+  );
+};
 
-export default SecondPage
+export default SecondPage;

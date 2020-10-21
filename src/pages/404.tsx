@@ -1,10 +1,10 @@
-import { PageProps } from "gatsby"
-import React, { FC } from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import { PageProps } from 'gatsby';
+import React, { FC } from 'react';
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
-const NotFoundPage: FC<PageProps> = props => {
-  const { location } = props
+const NotFoundPage: FC<PageProps> = (props) => {
+  const { location } = props;
 
   return (
     <Layout location={location}>
@@ -12,7 +12,7 @@ const NotFoundPage: FC<PageProps> = props => {
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
