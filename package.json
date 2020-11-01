@@ -15,7 +15,7 @@
     "gatsby-plugin-sharp": "^2.6.40",
     "gatsby-source-filesystem": "^2.3.37",
     "gatsby-source-shopify": "^3.2.39",
-    "gatsby-transformer-sharp": "^2.5.17",
+    "gatsby-transformer-sharp": "^2.5.20",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0"
