@@ -1,18 +1,19 @@
 import React, { FC } from 'react';
-import Product, { ProductProps } from '../Product';
+import ProductPreview, { ProductPreviewProps } from '../ProductPreview';
+import styles from './style.module.css';
 
 export interface ProductsProps {
-  products: ProductProps[];
+  products: ProductPreviewProps[];
 }
 
 const Products: FC<ProductsProps> = (props) => {
   const { products } = props;
 
   return (
-    <ul>
+    <ul className={styles.products}>
       {products.map((product) => (
         <li key={product.shopifyId}>
-          <Product {...product} />
+          <ProductPreview {...product} />
         </li>
       ))}
     </ul>
