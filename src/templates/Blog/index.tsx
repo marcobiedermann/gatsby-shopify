@@ -1,6 +1,7 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { FC } from 'react';
 import Articles from '../../components/Articles';
+import Grid from '../../components/Grid';
 import Layout from '../../components/Layout';
 
 interface ShopifyArticle {
@@ -31,9 +32,11 @@ const BlogTemplate: FC<PageProps<DataProps>> = (props) => {
 
   return (
     <Layout location={location}>
-      <h1>{shopifyBlog.title}</h1>
+      <Grid>
+        <h1>{shopifyBlog.title}</h1>
 
-      <Articles articles={allShopifyArticle.edges.map((edge) => edge.node)} />
+        <Articles articles={allShopifyArticle.edges.map((edge) => edge.node)} />
+      </Grid>
     </Layout>
   );
 };

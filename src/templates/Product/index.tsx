@@ -1,5 +1,6 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { FC } from 'react';
+import Grid from '../../components/Grid';
 import Layout from '../../components/Layout';
 import Product from '../../components/Product';
 
@@ -43,7 +44,9 @@ const ProductTemplate: FC<PageProps<DataProps>> = (props) => {
 
   return (
     <Layout location={location}>
-      <Product {...shopifyProduct} />
+      <Grid>
+        <Product {...shopifyProduct} />
+      </Grid>
     </Layout>
   );
 };

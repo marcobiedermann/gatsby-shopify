@@ -1,6 +1,7 @@
 import { graphql, Link, PageProps } from 'gatsby';
 import React, { FC } from 'react';
 import Collection from '../../components/Collection';
+import Grid from '../../components/Grid';
 import Layout from '../../components/Layout';
 
 interface Product {
@@ -26,16 +27,18 @@ const CollectionTemplate: FC<PageProps<DataProps>> = (props) => {
 
   return (
     <Layout location={location}>
-      <Collection {...shopifyCollection} />
-      <ul>
-        {shopifyCollection.products.map((product) => (
-          <li key={product.shopifyId}>
-            <h2>
-              <Link to={`/products/${product.handle}`}>{product.title}</Link>
-            </h2>
-          </li>
-        ))}
-      </ul>
+      <Grid>
+        <Collection {...shopifyCollection} />
+        <ul>
+          {shopifyCollection.products.map((product) => (
+            <li key={product.shopifyId}>
+              <h2>
+                <Link to={`/products/${product.handle}`}>{product.title}</Link>
+              </h2>
+            </li>
+          ))}
+        </ul>
+      </Grid>
     </Layout>
   );
 };

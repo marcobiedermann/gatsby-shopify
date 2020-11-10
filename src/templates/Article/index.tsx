@@ -1,5 +1,6 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { FC } from 'react';
+import Grid from '../../components/Grid';
 import Layout from '../../components/Layout';
 
 interface Author {
@@ -32,25 +33,27 @@ const ArticleTemplate: FC<PageProps<DataProps>> = (props) => {
 
   return (
     <Layout location={location}>
-      <article>
-        <header>
-          <h1>{shopifyArticle.title}</h1>
-        </header>
-        <div dangerouslySetInnerHTML={{ __html: shopifyArticle.contentHtml }} />
-        <h2>{shopifyArticle.comments.length} Comment</h2>
-        <ol>
-          {shopifyArticle.comments.map((comment) => (
-            <li key={comment.shopifyId}>
-              <div>
-                <div dangerouslySetInnerHTML={{ __html: comment.contentHtml }} />
+      <Grid>
+        <article>
+          <header>
+            <h1>{shopifyArticle.title}</h1>
+          </header>
+          <div dangerouslySetInnerHTML={{ __html: shopifyArticle.contentHtml }} />
+          <h2>{shopifyArticle.comments.length} Comment</h2>
+          <ol>
+            {shopifyArticle.comments.map((comment) => (
+              <li key={comment.shopifyId}>
                 <div>
-                  <span>{comment.author.name}</span>
+                  <div dangerouslySetInnerHTML={{ __html: comment.contentHtml }} />
+                  <div>
+                    <span>{comment.author.name}</span>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </article>
+              </li>
+            ))}
+          </ol>
+        </article>
+      </Grid>
     </Layout>
   );
 };

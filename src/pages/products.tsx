@@ -1,5 +1,6 @@
 import { graphql, PageProps, useStaticQuery } from 'gatsby';
 import React, { FC } from 'react';
+import Grid from '../components/Grid';
 import Image from '../components/Image';
 import Layout from '../components/Layout';
 import Products from '../components/Products';
@@ -60,8 +61,10 @@ const ProductsPage: FC<PageProps> = (props) => {
 
   return (
     <Layout location={location}>
-      <h1>Products</h1>
-      <Products products={allShopifyProduct.edges.map((edge) => edge.node)} />
+      <Grid>
+        <h1>Products</h1>
+        <Products products={allShopifyProduct.edges.map((edge) => edge.node)} />
+      </Grid>
     </Layout>
   );
 };

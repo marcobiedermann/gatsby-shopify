@@ -9,6 +9,7 @@ import {
   TERMS_OF_SERVICE,
 } from '../../constants/routes';
 import Breadcrumb from '../Breadcrumb';
+import Grid from '../Grid';
 import Header from '../Header';
 import Navigation from '../Navigation';
 
@@ -41,16 +42,22 @@ const Layout: FC<LayoutProps> = (props) => {
   return (
     <>
       <Header>
-        <h1>{data.site.siteMetadata.title}</h1>
-        <Navigation routes={[COLLECTIONS, PRODUCTS]} />
+        <Grid>
+          <h1>{data.site.siteMetadata.title}</h1>
+          <Navigation routes={[COLLECTIONS, PRODUCTS]} />
+        </Grid>
       </Header>
       <div>
         <main>
-          <Breadcrumb breadcrumbItems={breadcrumbItems} />
+          <Grid>
+            <Breadcrumb breadcrumbItems={breadcrumbItems} />
+          </Grid>
           {children}
         </main>
         <footer>
-          <Navigation routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]} />
+          <Grid>
+            <Navigation routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]} />
+          </Grid>
         </footer>
       </div>
     </>
