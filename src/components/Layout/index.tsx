@@ -9,6 +9,7 @@ import {
   TERMS_OF_SERVICE,
 } from '../../constants/routes';
 import Breadcrumb from '../Breadcrumb';
+import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
 import Navigation from '../Navigation';
@@ -54,11 +55,11 @@ const Layout: FC<LayoutProps> = (props) => {
           </Grid>
           {children}
         </main>
-        <footer>
+        <Footer>
           <Grid>
             <Navigation routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]} />
           </Grid>
-        </footer>
+        </Footer>
       </div>
     </>
   );
