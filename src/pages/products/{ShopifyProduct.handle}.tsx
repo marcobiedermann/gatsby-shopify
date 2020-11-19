@@ -36,7 +36,7 @@ export interface DataProps {
   };
 }
 
-const ProductTemplate: FC<PageProps<DataProps>> = (props) => {
+const ProductPage: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { shopifyProduct },
     location,
@@ -51,9 +51,9 @@ const ProductTemplate: FC<PageProps<DataProps>> = (props) => {
   );
 };
 
-export const pageQuery = graphql`
-  query ProductByShopifyId($shopifyId: String!) {
-    shopifyProduct(shopifyId: { eq: $shopifyId }) {
+export const query = graphql`
+  query($id: String!) {
+    shopifyProduct(id: { eq: $id }) {
       availableForSale
       description
       handle
@@ -81,4 +81,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default ProductTemplate;
+export default ProductPage;

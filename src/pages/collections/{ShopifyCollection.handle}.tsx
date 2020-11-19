@@ -19,7 +19,7 @@ interface DataProps {
   };
 }
 
-const CollectionTemplate: FC<PageProps<DataProps>> = (props) => {
+const CollectionPage: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { shopifyCollection },
     location,
@@ -43,9 +43,9 @@ const CollectionTemplate: FC<PageProps<DataProps>> = (props) => {
   );
 };
 
-export const pageQuery = graphql`
-  query CollectionByShopifyId($shopifyId: String!) {
-    shopifyCollection(shopifyId: { eq: $shopifyId }) {
+export const query = graphql`
+  query($id: String!) {
+    shopifyCollection(id: { eq: $id }) {
       description
       products {
         handle
@@ -58,4 +58,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default CollectionTemplate;
+export default CollectionPage;

@@ -24,7 +24,7 @@ interface DataProps {
   };
 }
 
-const BlogTemplate: FC<PageProps<DataProps>> = (props) => {
+const BlogPage: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { allShopifyArticle, shopifyBlog },
     location,
@@ -41,9 +41,9 @@ const BlogTemplate: FC<PageProps<DataProps>> = (props) => {
   );
 };
 
-export const pageQuery = graphql`
-  query BlogByShopifyId($shopifyId: String!) {
-    allShopifyArticle(filter: { blog: { shopifyId: { eq: $shopifyId } } }) {
+export const query = graphql`
+  query($id: String!) {
+    allShopifyArticle(filter: { blog: { id: { eq: $id } } }) {
       edges {
         node {
           blog {
@@ -55,10 +55,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    shopifyBlog(shopifyId: { eq: $shopifyId }) {
+    shopifyBlog(id: { eq: $id }) {
       title
     }
   }
 `;
 
-export default BlogTemplate;
+export default BlogPage;

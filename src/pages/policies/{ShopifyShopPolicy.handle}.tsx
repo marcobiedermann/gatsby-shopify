@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 import Page from '../../components/Page';
 
 export interface DataProps {
-  shopifyPage: {
+  shopifyShopPolicy: {
     body: string;
     handle: string;
     shopifyId: string;
@@ -13,24 +13,26 @@ export interface DataProps {
   };
 }
 
-const PageTemplate: FC<PageProps<DataProps>> = (props) => {
+const Policy: FC<PageProps<DataProps>> = (props) => {
   const {
-    data: { shopifyPage },
+    data: { shopifyShopPolicy },
     location,
   } = props;
+
+  console.log({ props });
 
   return (
     <Layout location={location}>
       <Grid>
-        <Page {...shopifyPage} />
+        <Page {...shopifyShopPolicy} />
       </Grid>
     </Layout>
   );
 };
 
-export const pageQuery = graphql`
-  query PageByShopifyId($shopifyId: String!) {
-    shopifyPage(shopifyId: { eq: $shopifyId }) {
+export const query = graphql`
+  query($id: String!) {
+    shopifyShopPolicy(id: { eq: $id }) {
       body
       handle
       shopifyId
@@ -39,4 +41,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default PageTemplate;
+export default Policy;

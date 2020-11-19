@@ -1,7 +1,7 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { FC } from 'react';
-import Grid from '../../components/Grid';
-import Layout from '../../components/Layout';
+import Grid from '../../../components/Grid';
+import Layout from '../../../components/Layout';
 
 interface Author {
   name: string;
@@ -25,7 +25,7 @@ interface DataProps {
   };
 }
 
-const ArticleTemplate: FC<PageProps<DataProps>> = (props) => {
+const ArticlePage: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { shopifyArticle },
     location,
@@ -58,9 +58,9 @@ const ArticleTemplate: FC<PageProps<DataProps>> = (props) => {
   );
 };
 
-export const pageQuery = graphql`
-  query ArticleByShopifyId($shopifyId: String!) {
-    shopifyArticle(shopifyId: { eq: $shopifyId }) {
+export const query = graphql`
+  query($id: String!) {
+    shopifyArticle(id: { eq: $id }) {
       author {
         name
       }
@@ -78,4 +78,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default ArticleTemplate;
+export default ArticlePage;
