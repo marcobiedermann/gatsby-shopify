@@ -1,63 +1,13 @@
-import { graphql, PageProps, useStaticQuery } from 'gatsby';
+import { PageProps } from 'gatsby';
 import React, { FC } from 'react';
 import Grid from '../components/Grid';
-import Image from '../components/Image';
 import Layout from '../components/Layout';
 import Products from '../components/Products';
-
-interface Image {
-  originalSrc: string;
-}
-
-interface PriceRange {
-  minVariantPrice: VariantPrice;
-}
-
-interface ShopifyProductQuery {
-  handle: string;
-  images: Image[];
-  priceRange: PriceRange;
-  shopifyId: string;
-  title: string;
-}
-
-interface VariantPrice {
-  amount: string;
-  currencyCode: string;
-}
-
-interface AllShopifyProductQuery {
-  allShopifyProduct: {
-    edges: {
-      node: ShopifyProductQuery;
-    }[];
-  };
-}
+import { useAllShopifyProduct } from '../hooks/product';
 
 const ProductsPage: FC<PageProps> = (props) => {
   const { location } = props;
-  const { allShopifyProduct } = useStaticQuery<AllShopifyProductQuery>(graphql`
-    {
-      allShopifyProduct(sort: { fields: [title] }) {
-        edges {
-          node {
-            handle
-            images {
-              originalSrc
-            }
-            priceRange {
-              minVariantPrice {
-                amount
-                currencyCode
-              }
-            }
-            shopifyId
-            title
-          }
-        }
-      }
-    }
-  `);
+  const { allShopifyProduct } = useAllShopifyProduct();
 
   return (
     <Layout location={location}>

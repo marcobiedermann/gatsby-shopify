@@ -1,46 +1,13 @@
-import { graphql, Link, PageProps, useStaticQuery } from 'gatsby';
+import { Link, PageProps } from 'gatsby';
 import React, { FC } from 'react';
 import Grid from '../components/Grid';
 import Image from '../components/Image';
 import Layout from '../components/Layout';
-
-interface ShopifyCollectionQuery {
-  description: string;
-  handle: string;
-  image: {
-    src: string;
-  };
-  shopifyId: string;
-  title: string;
-}
-
-interface AllShopifyCollectionQuery {
-  allShopifyCollection: {
-    edges: {
-      node: ShopifyCollectionQuery;
-    }[];
-  };
-}
+import { useAllShopifyCollection } from '../hooks/collection';
 
 const CollectionsPage: FC<PageProps> = (props) => {
   const { location } = props;
-  const { allShopifyCollection } = useStaticQuery<AllShopifyCollectionQuery>(graphql`
-    {
-      allShopifyCollection(sort: { fields: [title] }) {
-        edges {
-          node {
-            description
-            handle
-            image {
-              src
-            }
-            shopifyId
-            title
-          }
-        }
-      }
-    }
-  `);
+  const { allShopifyCollection } = useAllShopifyCollection();
 
   return (
     <Layout location={location}>
