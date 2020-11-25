@@ -46,7 +46,7 @@ const Layout: FC<LayoutProps> = (props) => {
     <div className={styles.layout}>
       <Header>
         <h1>{data.site.siteMetadata.title}</h1>
-        <Navigation routes={[COLLECTIONS, PRODUCTS]} />
+        <Navigation inline routes={[COLLECTIONS, PRODUCTS]} />
       </Header>
       <Main>
         <Grid>

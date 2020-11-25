@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Marco Biedermann",
   "dependencies": {
+    "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "formik": "^2.2.5",
     "gatsby": "^2.26.1",
@@ -22,6 +23,7 @@
     "typeface-montserrat": "^1.1.13"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.11",
     "@types/react": "^16.9.56",
     "@types/react-helmet": "^6.1.0",
     "prettier": "2.1.2",
