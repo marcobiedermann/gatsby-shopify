@@ -1,5 +1,6 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { FC } from 'react';
+import Comments from '../../../components/Comments';
 import Grid from '../../../components/Grid';
 import Layout from '../../../components/Layout';
 
@@ -40,18 +41,7 @@ const ArticlePage: FC<PageProps<DataProps>> = (props) => {
           </header>
           <div dangerouslySetInnerHTML={{ __html: shopifyArticle.contentHtml }} />
           <h2>{shopifyArticle.comments.length} Comment</h2>
-          <ol>
-            {shopifyArticle.comments.map((comment) => (
-              <li key={comment.shopifyId}>
-                <div>
-                  <div dangerouslySetInnerHTML={{ __html: comment.contentHtml }} />
-                  <div>
-                    <span>{comment.author.name}</span>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <Comments comments={shopifyArticle.comments} />
         </article>
       </Grid>
     </Layout>
