@@ -9,6 +9,7 @@ interface ShopifyArticle {
     blog: {
       handle: string;
     };
+    excerptHtml: string;
     handle: string;
     shopifyId: string;
     title: string;
@@ -49,6 +50,7 @@ export const query = graphql`
           blog {
             handle
           }
+          excerptHtml
           handle
           shopifyId
           title
