@@ -1,5 +1,4 @@
 import { WindowLocation } from '@reach/router';
-import { graphql, useStaticQuery } from 'gatsby';
 import React, { FC } from 'react';
 import {
   COLLECTIONS,
@@ -8,10 +7,12 @@ import {
   REFUND_POLICY,
   TERMS_OF_SERVICE,
 } from '../../constants/routes';
+import { useShopifyShop } from '../../hooks/shop';
 import Breadcrumb from '../Breadcrumb';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
+import Logo from '../Logo';
 import Main from '../Main';
 import Navigation from '../Navigation';
 import styles from './style.module.css';
@@ -22,15 +23,7 @@ export interface LayoutProps {
 
 const Layout: FC<LayoutProps> = (props) => {
   const { children, location } = props;
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+  const { shopifyShop } = useShopifyShop();
 
   const segments = location.pathname.split('/').filter((segment) => segment);
   const breadcrumbItems = segments.map((segment, index) => {
@@ -45,7 +38,7 @@ const Layout: FC<LayoutProps> = (props) => {
   return (
     <div className={styles.layout}>
       <Header>
-        <h1>{data.site.siteMetadata.title}</h1>
+        <Logo>{shopifyShop.name}</Logo>
         <Navigation inline routes={[COLLECTIONS, PRODUCTS]} />
       </Header>
       <Main>
