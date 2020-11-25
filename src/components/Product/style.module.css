@@ -1,0 +1,21 @@
+.product {
+  display: flex;
+}
+
+.product__description {
+  margin-bottom: 1.5em;
+}
+
+.product__image {
+  width: 128px;
+}
+
+.product__images {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product__title {
+  font-size: 2rem;
+}
