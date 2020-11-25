@@ -1,6 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 import React, { FC } from 'react';
 import Image from '../Image';
+import Label from '../Label';
 import Tags from '../Tags';
 import styles from './style.module.css';
 
@@ -67,7 +68,7 @@ const Product: FC<ProductProps> = (props) => {
             <Form>
               {options.map((option) => (
                 <div key={option.shopifyId}>
-                  <label htmlFor={option.name}>{option.name}</label>
+                  <Label htmlFor={option.name}>{option.name}</Label>
                   <Field as="select" name={option.name} id={option.name}>
                     {option.values.map((value) => (
                       <option key={`${option.name}-${value}`} value={value}>
@@ -78,7 +79,7 @@ const Product: FC<ProductProps> = (props) => {
                 </div>
               ))}
               <div>
-                <label htmlFor="quantity">Quantity</label>
+                <Label htmlFor="quantity">Quantity</Label>
                 <Field id="quantity" name="quantity" />
               </div>
               <div>
