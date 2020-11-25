@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import React, { FC } from 'react';
+import Button from '../Button';
 import Image from '../Image';
 import Label from '../Label';
 import Tags from '../Tags';
@@ -67,9 +68,9 @@ const Product: FC<ProductProps> = (props) => {
           {({ isSubmitting }) => (
             <Form>
               {options.map((option) => (
-                <div key={option.shopifyId}>
+                <div className="form__field" key={option.shopifyId}>
                   <Label htmlFor={option.name}>{option.name}</Label>
-                  <Field as="select" name={option.name} id={option.name}>
+                  <Field className="form__input" as="select" name={option.name} id={option.name}>
                     {option.values.map((value) => (
                       <option key={`${option.name}-${value}`} value={value}>
                         {value}
@@ -78,14 +79,21 @@ const Product: FC<ProductProps> = (props) => {
                   </Field>
                 </div>
               ))}
-              <div>
+              <div className="form__field">
                 <Label htmlFor="quantity">Quantity</Label>
-                <Field id="quantity" name="quantity" />
+                <Field
+                  className="form__input"
+                  id="quantity"
+                  min="1"
+                  name="quantity"
+                  step="1"
+                  type="number"
+                />
               </div>
-              <div>
-                <button type="submit" disabled={isSubmitting}>
-                  Check out
-                </button>
+              <div className="form__field">
+                <Button type="submit" disabled={isSubmitting}>
+                  Add to cart
+                </Button>
               </div>
             </Form>
           )}

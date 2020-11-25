@@ -18,8 +18,23 @@ a {
   color: inherit;
 }
 
+button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
 img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
+}
+
+.form__field {
+  margin-bottom: 1em;
+}
+
+.form__input {
+  padding: 0.5em 1em;
+  width: 100%;
 }
