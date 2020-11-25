@@ -12,7 +12,9 @@ import Breadcrumb from '../Breadcrumb';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
+import Main from '../Main';
 import Navigation from '../Navigation';
+import styles from './style.module.css';
 
 export interface LayoutProps {
   location: WindowLocation<WindowLocation['state']>;
@@ -41,27 +43,23 @@ const Layout: FC<LayoutProps> = (props) => {
   });
 
   return (
-    <>
+    <div className={styles.layout}>
       <Header>
-        <Grid>
-          <h1>{data.site.siteMetadata.title}</h1>
-          <Navigation routes={[COLLECTIONS, PRODUCTS]} />
-        </Grid>
+        <h1>{data.site.siteMetadata.title}</h1>
+        <Navigation routes={[COLLECTIONS, PRODUCTS]} />
       </Header>
-      <div>
-        <main>
-          <Grid>
-            <Breadcrumb breadcrumbItems={breadcrumbItems} />
-          </Grid>
-          {children}
-        </main>
-        <Footer>
-          <Grid>
-            <Navigation routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]} />
-          </Grid>
-        </Footer>
-      </div>
-    </>
+      <Main>
+        <Grid>
+          <Breadcrumb breadcrumbItems={breadcrumbItems} />
+        </Grid>
+        {children}
+      </Main>
+      <Footer>
+        <Grid>
+          <Navigation routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]} />
+        </Grid>
+      </Footer>
+    </div>
   );
 };
 

@@ -13,6 +13,10 @@ body {
   min-height: 100vh;
 }
 
+a {
+  color: inherit;
+}
+
 img {
   height: auto;
   max-width: 100%;
