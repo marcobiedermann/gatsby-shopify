@@ -2,7 +2,8 @@
   display: flex;
   gap: 0.5em;
   list-style: none;
-  margin: 0;
+  margin-bottom: 1.5em;
+  margin-top: 0;
   padding: 0;
 }
 

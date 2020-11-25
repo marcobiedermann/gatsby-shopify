@@ -41,7 +41,7 @@ const Product: FC<ProductProps> = (props) => {
 
   return (
     <div className={styles.product}>
-      <div>
+      <div style={{ width: '50%' }}>
         <ul className={styles.product__images}>
           {images.map((image) => (
             <li key={image.id}>
@@ -50,7 +50,7 @@ const Product: FC<ProductProps> = (props) => {
           ))}
         </ul>
       </div>
-      <div>
+      <div style={{ paddingLeft: '6em', paddingRight: '6em', width: '50%' }}>
         <h2 className={styles.product__title}>{title}</h2>
         <div className={styles.product__description}>
           <p>{description}</p>
