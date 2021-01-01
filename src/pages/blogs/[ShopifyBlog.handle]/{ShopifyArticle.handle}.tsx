@@ -39,7 +39,11 @@ const ArticlePage: FC<PageProps<DataProps>> = (props) => {
           <header>
             <h1>{shopifyArticle.title}</h1>
           </header>
-          <div dangerouslySetInnerHTML={{ __html: shopifyArticle.contentHtml }} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: shopifyArticle.contentHtml,
+            }}
+          />
           <h2>{shopifyArticle.comments.length} Comment</h2>
           <Comments comments={shopifyArticle.comments} />
         </article>

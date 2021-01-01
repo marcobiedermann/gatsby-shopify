@@ -12,7 +12,11 @@ const Comment: FC<CommentProps> = (props) => {
 
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <div
+        dangerouslySetInnerHTML={{
+          __html: contentHtml,
+        }}
+      />
       <Author {...author} />
     </div>
   );

@@ -19,7 +19,11 @@ const Article: FC<ArticleProps> = (props) => {
       <h3>
         <Link to={`/blogs/${blog.handle}/${handle}`}>{title}</Link>
       </h3>
-      <div dangerouslySetInnerHTML={{ __html: excerptHtml }} />
+      <div
+        dangerouslySetInnerHTML={{
+          __html: excerptHtml,
+        }}
+      />
       <p>
         <Link to={`/blogs/${blog.handle}/${handle}`}>Read more</Link>
       </p>

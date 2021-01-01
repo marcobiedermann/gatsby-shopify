@@ -11,7 +11,11 @@ const Page: FC<PageProps> = (props) => {
   return (
     <>
       <h1>{title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: body }} />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: body,
+        }}
+      />
     </>
   );
 };
