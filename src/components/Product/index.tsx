@@ -76,14 +76,35 @@ const Product: FC<ProductProps> = (props) => {
             <Form>
               {options.map((option) => (
                 <div className="form__field" key={option.shopifyId}>
-                  <Label htmlFor={option.name}>{option.name}</Label>
-                  <Field className="form__input" as="select" name={option.name} id={option.name}>
-                    {option.values.map((value) => (
-                      <option key={`${option.name}-${value}`} value={value}>
-                        {value}
-                      </option>
-                    ))}
-                  </Field>
+                  {option.values.length > 5 ? (
+                    <>
+                      <Label htmlFor={option.name}>{option.name}</Label>
+                      <Field
+                        as="select"
+                        className="form__input"
+                        id={option.name}
+                        name={option.name}
+                      >
+                        {option.values.map((value) => (
+                          <option key={`${option.name}-${value}`} value={value}>
+                            {value}
+                          </option>
+                        ))}
+                      </Field>
+                    </>
+                  ) : (
+                    <fieldset>
+                      <legend>{option.name}</legend>
+                      <div className={styles.product__options}>
+                        {option.values.map((value) => (
+                          <div>
+                            <Label htmlFor={value}>{value}</Label>
+                            <Field type="radio" id={value} name={option.name} value={value} />
+                          </div>
+                        ))}
+                      </div>
+                    </fieldset>
+                  )}
                 </div>
               ))}
               <div className="form__field">

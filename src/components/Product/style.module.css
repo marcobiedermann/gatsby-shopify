@@ -19,6 +19,11 @@
   padding: 0;
 }
 
+.product__options {
+  display: flex;
+  gap: 1em;
+}
+
 .product__title {
   font-size: 2rem;
 }
