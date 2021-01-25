@@ -1,13 +1,6 @@
 import { WindowLocation } from '@reach/router';
 import React, { FC } from 'react';
-import {
-  COLLECTIONS,
-  NEWS,
-  PRIVACY_POLICY,
-  PRODUCTS,
-  REFUND_POLICY,
-  TERMS_OF_SERVICE,
-} from '../../constants/routes';
+import { FOOTER, MAIN } from '../../constants/menus';
 import { useShopifyShop } from '../../hooks/shop';
 import Breadcrumb from '../Breadcrumb';
 import Footer from '../Footer';
@@ -40,7 +33,7 @@ const Layout: FC<LayoutProps> = (props) => {
     <div className={styles.layout}>
       <Header>
         <Logo>{shopifyShop.name}</Logo>
-        <Navigation inline routes={[COLLECTIONS, PRODUCTS, NEWS]} />
+        <Navigation inline routes={MAIN} />
       </Header>
       <Main>
         <Grid>
@@ -50,7 +43,7 @@ const Layout: FC<LayoutProps> = (props) => {
       </Main>
       <Footer>
         <Grid>
-          <Navigation routes={[PRIVACY_POLICY, REFUND_POLICY, TERMS_OF_SERVICE]} />
+          <Navigation routes={FOOTER} />
         </Grid>
       </Footer>
     </div>
