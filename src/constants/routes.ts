@@ -8,6 +8,11 @@ export const COLLECTIONS: Route = {
   path: '/collections',
 };
 
+export const NEWS: Route = {
+  name: 'News',
+  path: '/blogs/news',
+};
+
 export const PRODUCTS: Route = {
   name: 'Products',
   path: '/products',

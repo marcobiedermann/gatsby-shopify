@@ -2,6 +2,7 @@ import { WindowLocation } from '@reach/router';
 import React, { FC } from 'react';
 import {
   COLLECTIONS,
+  NEWS,
   PRIVACY_POLICY,
   PRODUCTS,
   REFUND_POLICY,
@@ -39,7 +40,7 @@ const Layout: FC<LayoutProps> = (props) => {
     <div className={styles.layout}>
       <Header>
         <Logo>{shopifyShop.name}</Logo>
-        <Navigation inline routes={[COLLECTIONS, PRODUCTS]} />
+        <Navigation inline routes={[COLLECTIONS, PRODUCTS, NEWS]} />
       </Header>
       <Main>
         <Grid>
