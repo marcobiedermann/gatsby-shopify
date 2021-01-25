@@ -11,8 +11,7 @@ const ProductsPage: FC<PageProps> = (props) => {
 
   return (
     <Layout location={location}>
-      <Grid>
-        <h1>Products</h1>
+      <Grid isFull>
         <Products products={allShopifyProduct.edges.map((edge) => edge.node)} />
       </Grid>
     </Layout>

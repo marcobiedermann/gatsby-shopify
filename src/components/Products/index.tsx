@@ -11,6 +11,11 @@ const Products: FC<ProductsProps> = (props) => {
 
   return (
     <ul className={styles.products}>
+      <li>
+        <div>
+          <h1 className={styles.products__title}>Products</h1>
+        </div>
+      </li>
       {products.map((product) => (
         <li key={product.shopifyId}>
           <ProductPreview {...product} />

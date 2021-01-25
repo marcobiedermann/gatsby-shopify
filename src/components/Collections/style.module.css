@@ -1,4 +1,4 @@
-.products {
+.collections {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   list-style: none;
@@ -6,19 +6,19 @@
   padding: 0;
 }
 
-.products li {
+.collections li {
   background-color: #fff;
   box-shadow: 0 0 0 1px #ededed;
   display: grid;
   place-items: center;
 }
 
-.products li:first-child {
+.collections li:first-child {
   grid-column-end: span 2;
   grid-row-end: span 2;
 }
 
-.products__title {
+.collections__title {
   font-size: 6rem;
   margin-bottom: 0.125em;
 }
