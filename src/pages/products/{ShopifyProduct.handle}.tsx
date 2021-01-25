@@ -33,6 +33,7 @@ export interface DataProps {
     shopifyId: string;
     tags: string[];
     title: string;
+    vendor: string;
   };
 }
 
@@ -77,6 +78,7 @@ export const query = graphql`
       shopifyId
       tags
       title
+      vendor
     }
   }
 `;
