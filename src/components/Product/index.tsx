@@ -26,9 +26,11 @@ export interface ProductProps {
   priceRange: {
     minVariantPrice: {
       amount: string;
+      currencyCode: string;
     };
     maxVariantPrice: {
       amount: string;
+      currencyCode: string;
     };
   };
   shopifyId: string;
@@ -38,7 +40,7 @@ export interface ProductProps {
 }
 
 const Product: FC<ProductProps> = (props) => {
-  const { description, images, options, tags, title, vendor } = props;
+  const { description, images, options, priceRange, tags, title, vendor } = props;
 
   return (
     <div className={styles.product}>
@@ -54,6 +56,9 @@ const Product: FC<ProductProps> = (props) => {
       <div style={{ paddingLeft: '6em', paddingRight: '6em', width: '50%' }}>
         <h1 className={styles.product__title}>{title}</h1>
         <h2>by {vendor}</h2>
+        <div>
+          {priceRange.minVariantPrice.amount} {priceRange.minVariantPrice.currencyCode}
+        </div>
         <div className={styles.product__description}>
           <p>{description}</p>
         </div>

@@ -25,9 +25,11 @@ export interface DataProps {
     priceRange: {
       minVariantPrice: {
         amount: string;
+        currencyCode: string;
       };
       maxVariantPrice: {
         amount: string;
+        currencyCode: string;
       };
     };
     shopifyId: string;
@@ -70,9 +72,11 @@ export const query = graphql`
       priceRange {
         minVariantPrice {
           amount
+          currencyCode
         }
         maxVariantPrice {
           amount
+          currencyCode
         }
       }
       shopifyId
