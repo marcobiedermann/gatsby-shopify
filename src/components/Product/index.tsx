@@ -97,7 +97,7 @@ const Product: FC<ProductProps> = (props) => {
                       <legend>{option.name}</legend>
                       <div className={styles.product__options}>
                         {option.values.map((value) => (
-                          <div>
+                          <div key={value}>
                             <Label htmlFor={value}>{value}</Label>
                             <Field type="radio" id={value} name={option.name} value={value} />
                           </div>

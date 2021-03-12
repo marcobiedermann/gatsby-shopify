@@ -1,8 +1,6 @@
-import { WindowLocation } from '@reach/router';
 import React, { FC } from 'react';
 import { FOOTER, MAIN } from '../../constants/menus';
 import { useShopifyShop } from '../../hooks/shop';
-import Breadcrumb from '../Breadcrumb';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
@@ -12,22 +10,13 @@ import Navigation from '../Navigation';
 import styles from './style.module.css';
 
 export interface LayoutProps {
-  location: WindowLocation<WindowLocation['state']>;
+  shopifyShop: {
+    name: string
+  }
 }
 
-const Layout: FC<LayoutProps> = (props) => {
-  const { children, location } = props;
-  const { shopifyShop } = useShopifyShop();
-
-  const segments = location.pathname.split('/').filter((segment) => segment);
-  const breadcrumbItems = segments.map((segment, index) => {
-    const path = `/${segments.slice(0, index + 1).join('/')}`;
-
-    return {
-      name: segment,
-      path,
-    };
-  });
+export const Layout: FC<LayoutProps> = (props) => {
+  const { children, shopifyShop, } = props;
 
   return (
     <div className={styles.layout}>
@@ -36,9 +25,6 @@ const Layout: FC<LayoutProps> = (props) => {
         <Navigation inline routes={MAIN} />
       </Header>
       <Main>
-        <Grid>
-          <Breadcrumb breadcrumbItems={breadcrumbItems} />
-        </Grid>
         {children}
       </Main>
       <Footer>
@@ -50,4 +36,10 @@ const Layout: FC<LayoutProps> = (props) => {
   );
 };
 
-export default Layout;
+export default () => {
+  const { shopifyShop } = useShopifyShop();
+
+  return (
+    <Layout shopifyShop={shopifyShop} />
+  )
+};

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`product preview component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="productPreview"
+  >
+    <figure>
+      <a
+        href="/products/product"
+      >
+        <img
+          alt="Product Title"
+          src="/path/to/image.jpg"
+        />
+      </a>
+    </figure>
+    <h3>
+      <a
+        href="/products/product"
+      >
+        Product Title
+      </a>
+    </h3>
+    <p>
+      100 EUR
+    </p>
+  </div>
+</DocumentFragment>
+`;

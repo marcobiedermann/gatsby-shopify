@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="layout"
+  >
+    <header
+      class="header"
+    >
+      <a
+        href="/"
+      >
+        ShopifyShop
+      </a>
+      <nav
+        class="navigation"
+      >
+        <ul
+          class="navigation__list navigation__listInline"
+        >
+          <li>
+            <a
+              class="navigation__link"
+              href="/collections"
+            >
+              Collections
+            </a>
+          </li>
+          <li>
+            <a
+              class="navigation__link"
+              href="/products"
+            >
+              Products
+            </a>
+          </li>
+          <li>
+            <a
+              class="navigation__link"
+              href="/blogs/news"
+            >
+              News
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main
+      class="main"
+    >
+      Content
+    </main>
+    <footer
+      class="footer"
+    >
+      <div
+        class="grid"
+      >
+        <nav
+          class="navigation"
+        >
+          <ul
+            class="navigation__list"
+          >
+            <li>
+              <a
+                class="navigation__link"
+                href="/policies/privacy-policy"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                class="navigation__link"
+                href="/policies/refund-policy"
+              >
+                Refund Policy
+              </a>
+            </li>
+            <li>
+              <a
+                class="navigation__link"
+                href="/policies/terms-of-service"
+              >
+                Terms of Service
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

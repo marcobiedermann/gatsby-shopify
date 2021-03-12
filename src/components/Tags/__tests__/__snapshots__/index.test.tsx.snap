@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tags component should render correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="tags"
+  >
+    <li>
+      <span>
+        tag
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

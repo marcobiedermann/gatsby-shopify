@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`collections component should render correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="collections"
+  >
+    <li>
+      <div>
+        <h1
+          class="collection__title"
+        >
+          Collections
+        </h1>
+      </div>
+    </li>
+    <li>
+      <div
+        class="collectionPreview"
+      >
+        <figure>
+          <a
+            href="/collections/collection"
+          >
+            <img
+              alt="Collection Title"
+              src=""
+            />
+          </a>
+        </figure>
+        <h3>
+          <a
+            href="/collections/collection"
+          >
+            Collection Title
+          </a>
+        </h3>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
