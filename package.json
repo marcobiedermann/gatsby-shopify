@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
-    "@types/classnames": "^2.2.11",
+    "@types/classnames": "^2.3.1",
     "@types/react": "^17.0.2",
     "@types/react-helmet": "^6.1.0",
     "identity-obj-proxy": "^3.0.0",
