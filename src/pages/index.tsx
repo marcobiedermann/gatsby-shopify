@@ -9,7 +9,7 @@ const IndexPage: FC<PageProps> = (props) => {
   const { location } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO title="Home" />
       <Grid>
         <h1>Hi people</h1>

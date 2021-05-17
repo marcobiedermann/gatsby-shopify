@@ -41,7 +41,7 @@ const CollectionPage: FC<PageProps<DataProps>> = (props) => {
   } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Grid isFull>
         <Collection {...shopifyCollection} />
       </Grid>
@@ -50,7 +50,7 @@ const CollectionPage: FC<PageProps<DataProps>> = (props) => {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     shopifyCollection(id: { eq: $id }) {
       description
       products {

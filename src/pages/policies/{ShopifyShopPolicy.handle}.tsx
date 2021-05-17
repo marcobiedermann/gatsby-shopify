@@ -22,7 +22,7 @@ const Policy: FC<PageProps<DataProps>> = (props) => {
   console.log({ props });
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Grid>
         <Page {...shopifyShopPolicy} />
       </Grid>
@@ -31,7 +31,7 @@ const Policy: FC<PageProps<DataProps>> = (props) => {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     shopifyShopPolicy(id: { eq: $id }) {
       body
       handle

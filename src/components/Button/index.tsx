@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, FC } from 'react';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 

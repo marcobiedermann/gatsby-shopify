@@ -7,16 +7,11 @@ import Header from '../Header';
 import Logo from '../Logo';
 import Main from '../Main';
 import Navigation from '../Navigation';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
-export interface LayoutProps {
-  shopifyShop: {
-    name: string
-  }
-}
-
-export const Layout: FC<LayoutProps> = (props) => {
-  const { children, shopifyShop, } = props;
+const Layout: FC = (props) => {
+  const { children } = props;
+  const { shopifyShop } = useShopifyShop();
 
   return (
     <div className={styles.layout}>
@@ -24,9 +19,7 @@ export const Layout: FC<LayoutProps> = (props) => {
         <Logo>{shopifyShop.name}</Logo>
         <Navigation inline routes={MAIN} />
       </Header>
-      <Main>
-        {children}
-      </Main>
+      <Main>{children}</Main>
       <Footer>
         <Grid>
           <Navigation routes={FOOTER} />
@@ -36,10 +29,4 @@ export const Layout: FC<LayoutProps> = (props) => {
   );
 };
 
-export default () => {
-  const { shopifyShop } = useShopifyShop();
-
-  return (
-    <Layout shopifyShop={shopifyShop} />
-  )
-};
+export default Layout;

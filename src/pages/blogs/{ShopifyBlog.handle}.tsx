@@ -32,7 +32,7 @@ const BlogPage: FC<PageProps<DataProps>> = (props) => {
   } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Grid>
         <h1>{shopifyBlog.title}</h1>
 
@@ -43,7 +43,7 @@ const BlogPage: FC<PageProps<DataProps>> = (props) => {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     allShopifyArticle(filter: { blog: { id: { eq: $id } } }) {
       edges {
         node {

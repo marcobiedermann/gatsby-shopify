@@ -20,7 +20,7 @@ const DefaultPage: FC<PageProps<DataProps>> = (props) => {
   } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Grid>
         <Page {...shopifyPage} />
       </Grid>
@@ -29,7 +29,7 @@ const DefaultPage: FC<PageProps<DataProps>> = (props) => {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     shopifyPage(id: { eq: $id }) {
       body
       handle

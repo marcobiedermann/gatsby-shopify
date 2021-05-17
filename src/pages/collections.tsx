@@ -10,7 +10,7 @@ const CollectionsPage: FC<PageProps> = (props) => {
   const { allShopifyCollection } = useAllShopifyCollection();
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Grid isFull>
         <Collections
           collections={allShopifyCollection.edges.map((collection) => collection.node)}

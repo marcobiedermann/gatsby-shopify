@@ -8,7 +8,7 @@ const NotFoundPage: FC<PageProps> = (props) => {
   const { location } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO title="404: Not found" />
       <Grid>
         <h1>NOT FOUND</h1>

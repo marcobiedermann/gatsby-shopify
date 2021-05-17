@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import ProductPreview, { ProductPreviewProps } from '../ProductPreview';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 export interface ProductsProps {
   products: ProductPreviewProps[];

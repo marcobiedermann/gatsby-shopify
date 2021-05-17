@@ -4,7 +4,7 @@ import Button from '../Button';
 import Image from '../Image';
 import Label from '../Label';
 import Tags from '../Tags';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 interface Image {
   id: string;

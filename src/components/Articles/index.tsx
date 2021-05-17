@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Article, { ArticleProps } from '../Article';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 export interface ArticlesProps {
   articles: ArticleProps[];

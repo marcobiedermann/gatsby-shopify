@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import ProductPreview, { ProductPreviewProps } from '../ProductPreview';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 export interface CollectionProps {
   description: string;
@@ -8,6 +8,8 @@ export interface CollectionProps {
   shopifyId: string;
   title: string;
 }
+
+console.log({ styles });
 
 const Collection: FC<CollectionProps> = (props) => {
   const { description, products, title } = props;

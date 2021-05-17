@@ -8,7 +8,7 @@ const SecondPage: FC<PageProps> = (props) => {
   const { location } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO title="Page two" />
       <Grid>
         <h1>Hi from the second page</h1>

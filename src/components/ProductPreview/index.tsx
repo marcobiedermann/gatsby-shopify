@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React, { FC } from 'react';
 import Image from '../Image';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 interface Image {
   originalSrc: string;

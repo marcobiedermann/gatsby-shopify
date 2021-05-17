@@ -46,7 +46,7 @@ const ProductPage: FC<PageProps<DataProps>> = (props) => {
   } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Grid>
         <Product {...shopifyProduct} />
       </Grid>
@@ -55,7 +55,7 @@ const ProductPage: FC<PageProps<DataProps>> = (props) => {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     shopifyProduct(id: { eq: $id }) {
       availableForSale
       description

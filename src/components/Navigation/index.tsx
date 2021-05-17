@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { Link } from 'gatsby';
 import React, { FC } from 'react';
 import { Route } from '../../constants/routes';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 export interface NavigationProps {
   inline?: boolean;

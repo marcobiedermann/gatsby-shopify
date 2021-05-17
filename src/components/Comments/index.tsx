@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import Comment, { CommentProps } from '../Comment';
-import styles from './style.module.css';
+import * as styles from './style.module.css';
 
 export interface CommentsProps {
   comments: CommentProps[];

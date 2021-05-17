@@ -33,7 +33,7 @@ const ArticlePage: FC<PageProps<DataProps>> = (props) => {
   } = props;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Grid>
         <article>
           <header>
@@ -53,7 +53,7 @@ const ArticlePage: FC<PageProps<DataProps>> = (props) => {
 };
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     shopifyArticle(id: { eq: $id }) {
       author {
         name
