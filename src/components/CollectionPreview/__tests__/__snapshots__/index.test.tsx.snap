@@ -1,27 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`collection preview component should render correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="collectionPreview"
-  >
-    <figure>
-      <a
-        href="/collections/collection"
-      >
-        <img
-          alt="Collection Title"
-          src=""
-        />
-      </a>
-    </figure>
-    <h3>
-      <a
-        href="/collections/collection"
-      >
-        Collection Title
-      </a>
-    </h3>
-  </div>
-</DocumentFragment>
+<div>
+  <figure>
+    <a
+      href="/collections/collection"
+    >
+      <img
+        alt="Collection Title"
+        src=""
+      />
+    </a>
+  </figure>
+  <h3>
+    <a
+      href="/collections/collection"
+    >
+      Collection Title
+    </a>
+  </h3>
+</div>
 `;

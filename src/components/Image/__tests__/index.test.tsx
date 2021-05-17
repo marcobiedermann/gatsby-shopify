@@ -4,8 +4,8 @@ import Image from '..';
 
 describe('image component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Image />);
+    const { container } = render(<Image />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

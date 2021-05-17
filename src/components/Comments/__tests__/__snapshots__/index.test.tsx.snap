@@ -1,20 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`comments component should render correctly 1`] = `
-<DocumentFragment>
-  <ol
-    class="comments"
-  >
-    <li>
+<ol>
+  <li>
+    <div>
+      <div />
       <div>
-        <div />
-        <div>
-          <span>
-            John Doe
-          </span>
-        </div>
+        <span>
+          John Doe
+        </span>
       </div>
-    </li>
-  </ol>
-</DocumentFragment>
+    </div>
+  </li>
+</ol>
 `;

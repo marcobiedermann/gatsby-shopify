@@ -4,8 +4,8 @@ import Tag from '..';
 
 describe('tag component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Tag>tag</Tag>);
+    const { container } = render(<Tag>tag</Tag>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

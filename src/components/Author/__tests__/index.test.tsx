@@ -5,8 +5,8 @@ import author from '../__fixtures__';
 
 describe('author component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Author {...author} />);
+    const { container } = render(<Author {...author} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

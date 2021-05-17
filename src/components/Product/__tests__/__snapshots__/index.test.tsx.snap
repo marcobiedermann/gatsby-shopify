@@ -1,144 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`product component should render correctly 1`] = `
-<DocumentFragment>
+<div>
   <div
-    class="product"
+    style="width: 50%;"
   >
-    <div
-      style="width: 50%;"
-    >
-      <ul
-        class="product__images"
-      >
-        <li>
-          <img
-            alt="Product Title"
-            class="product__image"
-            src="/path/to/image.jpg"
-          />
-        </li>
-      </ul>
+    <ul>
+      <li>
+        <img
+          alt="Product Title"
+          src="/path/to/image.jpg"
+        />
+      </li>
+    </ul>
+  </div>
+  <div
+    style="padding-left: 6em; padding-right: 6em; width: 50%;"
+  >
+    <h1>
+      Product Title
+    </h1>
+    <h2>
+      by 
+      Vendor
+    </h2>
+    <div>
+      100
+       
+      EUR
     </div>
-    <div
-      style="padding-left: 6em; padding-right: 6em; width: 50%;"
+    <div>
+      <p>
+        Product Description
+      </p>
+    </div>
+    <ul>
+      <li>
+        <span>
+          tag
+        </span>
+      </li>
+    </ul>
+    <form
+      action="#"
     >
-      <h1
-        class="product__title"
+      <div
+        class="form__field"
       >
-        Product Title
-      </h1>
-      <h2>
-        by Vendor
-      </h2>
-      <div>
-        100 EUR
+        <fieldset>
+          <legend>
+            Size
+          </legend>
+          <div>
+            <div>
+              <label
+                for="s"
+              >
+                s
+              </label>
+              <input
+                id="s"
+                name="Size"
+                type="radio"
+                value="s"
+              />
+            </div>
+            <div>
+              <label
+                for="m"
+              >
+                m
+              </label>
+              <input
+                id="m"
+                name="Size"
+                type="radio"
+                value="m"
+              />
+            </div>
+            <div>
+              <label
+                for="l"
+              >
+                l
+              </label>
+              <input
+                id="l"
+                name="Size"
+                type="radio"
+                value="l"
+              />
+            </div>
+          </div>
+        </fieldset>
       </div>
       <div
-        class="product__description"
+        class="form__field"
       >
-        <p>
-          Product Description
-        </p>
+        <label
+          for="quantity"
+        >
+          Quantity
+        </label>
+        <input
+          class="form__input"
+          id="quantity"
+          min="1"
+          name="quantity"
+          step="1"
+          type="number"
+          value="1"
+        />
       </div>
-      <ul
-        class="tags"
+      <div
+        class="form__field"
       >
-        <li>
-          <span>
-            tag
-          </span>
-        </li>
-      </ul>
-      <form
-        action="#"
-      >
-        <div
-          class="form__field"
+        <button
+          type="submit"
         >
-          <fieldset>
-            <legend>
-              Size
-            </legend>
-            <div
-              class="product__options"
-            >
-              <div>
-                <label
-                  class="label"
-                  for="s"
-                >
-                  s
-                </label>
-                <input
-                  id="s"
-                  name="Size"
-                  type="radio"
-                  value="s"
-                />
-              </div>
-              <div>
-                <label
-                  class="label"
-                  for="m"
-                >
-                  m
-                </label>
-                <input
-                  id="m"
-                  name="Size"
-                  type="radio"
-                  value="m"
-                />
-              </div>
-              <div>
-                <label
-                  class="label"
-                  for="l"
-                >
-                  l
-                </label>
-                <input
-                  id="l"
-                  name="Size"
-                  type="radio"
-                  value="l"
-                />
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <div
-          class="form__field"
-        >
-          <label
-            class="label"
-            for="quantity"
-          >
-            Quantity
-          </label>
-          <input
-            class="form__input"
-            id="quantity"
-            min="1"
-            name="quantity"
-            step="1"
-            type="number"
-            value="1"
-          />
-        </div>
-        <div
-          class="form__field"
-        >
-          <button
-            class="button"
-            type="submit"
-          >
-            Add to cart
-          </button>
-        </div>
-      </form>
-    </div>
+          Add to cart
+        </button>
+      </div>
+    </form>
   </div>
-</DocumentFragment>
+</div>
 `;

@@ -5,8 +5,8 @@ import tags from '../__fixtures__';
 
 describe('tags component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Tags {...tags} />);
+    const { container } = render(<Tags {...tags} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

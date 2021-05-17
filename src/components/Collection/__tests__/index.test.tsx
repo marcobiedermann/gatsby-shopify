@@ -5,8 +5,8 @@ import collection from '../__fixtures__';
 
 describe('collection component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Collection {...collection} />);
+    const { container } = render(<Collection {...collection} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -5,8 +5,8 @@ import navigation from '../__fixtures__';
 
 describe('navigation component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Navigation {...navigation} />);
+    const { container } = render(<Navigation {...navigation} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

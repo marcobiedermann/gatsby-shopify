@@ -5,8 +5,8 @@ import breadcrumb from '../__fixtures__';
 
 describe('breadcrumb component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Breadcrumb {...breadcrumb} />);
+    const { container } = render(<Breadcrumb {...breadcrumb} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

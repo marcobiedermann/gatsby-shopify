@@ -5,8 +5,8 @@ import page from '../__fixtures__';
 
 describe('page component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Page {...page} />);
+    const { container } = render(<Page {...page} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

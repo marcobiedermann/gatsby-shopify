@@ -1,19 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`breadcrumb component should render correctly 1`] = `
-<DocumentFragment>
-  <ol
-    class="breadcrumb"
-  >
-    <li
-      class="breadcrumb__item"
+<ol>
+  <li>
+    <a
+      href="/"
     >
-      <a
-        href="/"
-      >
-        Home
-      </a>
-    </li>
-  </ol>
-</DocumentFragment>
+      Home
+    </a>
+  </li>
+</ol>
 `;

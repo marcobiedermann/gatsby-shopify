@@ -5,8 +5,8 @@ import comments from '../__fixtures__';
 
 describe('comments component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Comments {...comments} />);
+    const { container } = render(<Comments {...comments} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

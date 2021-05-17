@@ -1,11 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`header component should render correctly 1`] = `
-<DocumentFragment>
-  <header
-    class="header"
-  >
-    Header
-  </header>
-</DocumentFragment>
+<header>
+  Header
+</header>
 `;

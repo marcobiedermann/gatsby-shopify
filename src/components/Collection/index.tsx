@@ -9,8 +9,6 @@ export interface CollectionProps {
   title: string;
 }
 
-console.log({ styles });
-
 const Collection: FC<CollectionProps> = (props) => {
   const { description, products, title } = props;
 

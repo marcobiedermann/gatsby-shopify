@@ -4,8 +4,8 @@ import Logo from '..';
 
 describe('logo component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Logo>Logo</Logo>);
+    const { container } = render(<Logo>Logo</Logo>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

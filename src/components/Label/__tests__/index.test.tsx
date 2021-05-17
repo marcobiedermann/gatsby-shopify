@@ -4,8 +4,8 @@ import Label from '..';
 
 describe('label component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Label>Label</Label>);
+    const { container } = render(<Label>Label</Label>);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

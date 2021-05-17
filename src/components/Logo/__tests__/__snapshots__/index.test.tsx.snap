@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`logo component should render correctly 1`] = `
-<DocumentFragment>
-  <a
-    href="/"
-  >
-    Logo
-  </a>
-</DocumentFragment>
+<a
+  href="/"
+>
+  Logo
+</a>
 `;

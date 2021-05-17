@@ -5,8 +5,8 @@ import productPreview from '../__fixtures__';
 
 describe('product preview component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<ProductPreview {...productPreview} />);
+    const { container } = render(<ProductPreview {...productPreview} />);
 
-    expect(asFragment()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
