@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Marco Biedermann",
   "dependencies": {
-    "@fontsource/montserrat": "^4.3.0",
+    "@fontsource/montserrat": "^4.4.2",
     "classnames": "^2.3.1",
     "dotenv": "^9.0.2",
     "formik": "^2.2.8",
