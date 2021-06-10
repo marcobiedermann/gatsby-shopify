@@ -1,4 +1,4 @@
 declare const styles: {
-  readonly 'productPreview': string;
+  readonly productPreview: string;
 };
 export = styles;
