@@ -1,9 +1,9 @@
 # Gatsby Shopify
 
-[![Build Status](https://img.shields.io/travis/com/marcobiedermann/gatsby-shopify)](https://travis-ci.com/marcobiedermann/gatsby-shopify)
 [![dependencies Status](https://img.shields.io/david/marcobiedermann/gatsby-shopify)](https://david-dm.org/marcobiedermann/gatsby-shopify)
 [![devDependencies Status](https://img.shields.io/david/dev/marcobiedermann/gatsby-shopify)](https://david-dm.org/marcobiedermann/gatsby-shopify?type=dev)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ff94b807-1104-4fe5-b8da-a464bc7d5ee7/deploy-status)](https://app.netlify.com/sites/marcobiedermann-gatsby-shopify/deploys)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/marcobiedermann/gatsby-shopify/CI)
 
 A starter for [Gatsby](https://www.gatsbyjs.com/) [Shopify](https://www.shopify.com/) shop.
 

@@ -43,7 +43,8 @@
     "format": "prettier --ignore-path .gitignore --write .",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "test": "jest"
+    "test": "jest --color --runInBand",
+    "test:ci": "npm run test -- --ci"
   },
   "repository": {
     "type": "git",
