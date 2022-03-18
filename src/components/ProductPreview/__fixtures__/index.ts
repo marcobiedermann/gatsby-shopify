@@ -2,12 +2,10 @@ import { ProductPreviewProps } from '..';
 
 const productPreview: ProductPreviewProps = {
   handle: 'product',
-  images: [
-    {
-      originalSrc: '/path/to/image.jpg',
-    },
-  ],
-  priceRange: {
+  featuredImage: {
+    originalSrc: '/path/to/image.jpg',
+  },
+  priceRangeV2: {
     minVariantPrice: {
       amount: '100',
       currencyCode: 'EUR',
