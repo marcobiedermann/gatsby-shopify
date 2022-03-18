@@ -5,9 +5,7 @@ import Image from '../components/Image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-const IndexPage: FC<PageProps> = (props) => {
-  const { location } = props;
-
+const IndexPage: FC<PageProps> = () => {
   return (
     <Layout>
       <SEO title="Home" />

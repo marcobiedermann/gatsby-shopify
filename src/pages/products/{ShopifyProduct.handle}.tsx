@@ -11,18 +11,17 @@ interface Image {
 
 interface Option {
   name: string;
-  shopifyId: string;
+  id: string;
   values: string[];
 }
 
 export interface DataProps {
   shopifyProduct: {
-    availableForSale: boolean;
     description: string;
     handle: string;
     images: Image[];
     options: Option[];
-    priceRange: {
+    priceRangeV2: {
       minVariantPrice: {
         amount: string;
         currencyCode: string;
@@ -42,7 +41,6 @@ export interface DataProps {
 const ProductPage: FC<PageProps<DataProps>> = (props) => {
   const {
     data: { shopifyProduct },
-    location,
   } = props;
 
   return (
@@ -57,7 +55,6 @@ const ProductPage: FC<PageProps<DataProps>> = (props) => {
 export const query = graphql`
   query ($id: String!) {
     shopifyProduct(id: { eq: $id }) {
-      availableForSale
       description
       handle
       images {
@@ -65,11 +62,11 @@ export const query = graphql`
         originalSrc
       }
       options {
-        shopifyId
+        id
         name
         values
       }
-      priceRange {
+      priceRangeV2 {
         minVariantPrice {
           amount
           currencyCode

@@ -5,8 +5,7 @@ import Layout from '../components/Layout';
 import Products from '../components/Products';
 import { useAllShopifyProduct } from '../hooks/product';
 
-const ProductsPage: FC<PageProps> = (props) => {
-  const { location } = props;
+const ProductsPage: FC<PageProps> = () => {
   const { allShopifyProduct } = useAllShopifyProduct();
 
   return (

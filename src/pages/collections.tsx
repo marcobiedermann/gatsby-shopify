@@ -5,8 +5,7 @@ import Grid from '../components/Grid';
 import Layout from '../components/Layout';
 import { useAllShopifyCollection } from '../hooks/collection';
 
-const CollectionsPage: FC<PageProps> = (props) => {
-  const { location } = props;
+const CollectionsPage: FC<PageProps> = () => {
   const { allShopifyCollection } = useAllShopifyCollection();
 
   return (

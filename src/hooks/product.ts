@@ -4,28 +4,30 @@ interface Image {
   originalSrc: string;
 }
 
-interface PriceRange {
-  minVariantPrice: VariantPrice;
-}
-
-interface ShopifyProductQuery {
-  handle: string;
-  images: Image[];
-  priceRange: PriceRange;
-  shopifyId: string;
-  title: string;
-}
-
 interface VariantPrice {
   amount: string;
   currencyCode: string;
 }
 
+interface PriceRangeV2 {
+  minVariantPrice: VariantPrice;
+}
+
+interface ShopifyProductQuery {
+  handle: string;
+  featuredImage: Image;
+  priceRangeV2: PriceRangeV2;
+  shopifyId: string;
+  title: string;
+}
+
+interface Edge {
+  node: ShopifyProductQuery;
+}
+
 interface AllShopifyProductQuery {
   allShopifyProduct: {
-    edges: {
-      node: ShopifyProductQuery;
-    }[];
+    edges: Edge[];
   };
 }
 
@@ -36,10 +38,10 @@ export function useAllShopifyProduct() {
         edges {
           node {
             handle
-            images {
+            featuredImage {
               originalSrc
             }
-            priceRange {
+            priceRangeV2 {
               minVariantPrice {
                 amount
                 currencyCode

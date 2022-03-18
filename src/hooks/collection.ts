@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
 interface Image {
-  src: string;
+  originalSrc: string;
 }
 
 interface ShopifyCollectionQuery {
@@ -12,11 +12,13 @@ interface ShopifyCollectionQuery {
   title: string;
 }
 
+interface Edge {
+  node: ShopifyCollectionQuery;
+}
+
 interface AllShopifyCollectionQuery {
   allShopifyCollection: {
-    edges: {
-      node: ShopifyCollectionQuery;
-    }[];
+    edges: Edge[];
   };
 }
 
@@ -29,7 +31,7 @@ export function useAllShopifyCollection() {
             description
             handle
             image {
-              src
+              originalSrc
             }
             shopifyId
             title

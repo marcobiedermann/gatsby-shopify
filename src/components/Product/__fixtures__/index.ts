@@ -1,7 +1,6 @@
 import { ProductProps } from '..';
 
 const product: ProductProps = {
-  availableForSale: true,
   description: 'Product Description',
   handle: 'product-handle',
   images: [
@@ -13,11 +12,11 @@ const product: ProductProps = {
   options: [
     {
       name: 'Size',
-      shopifyId: '12345678-9012-3456-7890-123456789012',
+      id: '12345678-9012-3456-7890-123456789012',
       values: ['s', 'm', 'l'],
     },
   ],
-  priceRange: {
+  priceRangeV2: {
     minVariantPrice: {
       amount: '100',
       currencyCode: 'EUR',

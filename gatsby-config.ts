@@ -1,12 +1,14 @@
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
+import type { GatsbyConfig } from 'gatsby';
+import { resolve } from 'path';
 
-const { NODE_ENV } = process.env;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 dotenv.config({
   path: `.env.${NODE_ENV}`,
 });
 
-const config = {
+const config: GatsbyConfig = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
     description:
@@ -19,8 +21,11 @@ const config = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
+        path: resolve('src/images'),
       },
+    },
+    {
+      resolve: 'gatsby-plugin-image',
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -37,14 +42,12 @@ const config = {
     {
       resolve: 'gatsby-source-shopify',
       options: {
-        shopName: process.env.SHOPIFY_SHOP_NAME,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        password: process.env.SHOPIFY_SHOP_PASSWORD,
+        storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
+        shopifyConnections: ['collections'],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
   ],
 };
 
-module.exports = config;
+export default config;

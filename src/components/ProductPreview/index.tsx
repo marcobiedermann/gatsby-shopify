@@ -3,42 +3,42 @@ import React, { FC } from 'react';
 import Image from '../Image';
 import * as styles from './style.module.css';
 
-interface Image {
-  originalSrc: string;
-}
-
-interface PriceRange {
-  minVariantPrice: VariantPrice;
-}
-
 interface VariantPrice {
   amount: string;
   currencyCode: string;
 }
 
+interface PriceRangeV2 {
+  minVariantPrice: VariantPrice;
+}
+
+interface Image {
+  originalSrc: string;
+}
+
 export interface ProductPreviewProps {
   handle: string;
-  images: Image[];
-  priceRange: PriceRange;
+  featuredImage: Image;
+  priceRangeV2: PriceRangeV2;
   shopifyId: string;
   title: string;
 }
 
 const ProductPreview: FC<ProductPreviewProps> = (props) => {
-  const { handle, images, title, priceRange } = props;
+  const { handle, featuredImage, title, priceRangeV2 } = props;
 
   return (
     <div className={styles.productPreview}>
       <figure>
         <Link to={`/products/${handle}`}>
-          <Image src={images[0].originalSrc} alt={title} />
+          <Image src={featuredImage.originalSrc} alt={title} />
         </Link>
       </figure>
       <h3>
         <Link to={`/products/${handle}`}>{title}</Link>
       </h3>
       <p>
-        {priceRange.minVariantPrice.amount} {priceRange.minVariantPrice.currencyCode}
+        {priceRangeV2.minVariantPrice.amount} {priceRangeV2.minVariantPrice.currencyCode}
       </p>
     </div>
   );

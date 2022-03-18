@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import { FOOTER, MAIN } from '../../constants/menus';
-import { useShopifyShop } from '../../hooks/shop';
+import { MAIN } from '../../constants/menus';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
@@ -11,18 +10,17 @@ import * as styles from './style.module.css';
 
 const Layout: FC = (props) => {
   const { children } = props;
-  const { shopifyShop } = useShopifyShop();
 
   return (
     <div className={styles.layout}>
       <Header>
-        <Logo>{shopifyShop.name}</Logo>
+        <Logo>shopifyShop.name</Logo>
         <Navigation inline routes={MAIN} />
       </Header>
       <Main>{children}</Main>
       <Footer>
         <Grid>
-          <Navigation routes={FOOTER} />
+          <p>© copyright</p>
         </Grid>
       </Footer>
     </div>

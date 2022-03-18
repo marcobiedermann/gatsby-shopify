@@ -4,9 +4,7 @@ import Grid from '../components/Grid';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-const NotFoundPage: FC<PageProps> = (props) => {
-  const { location } = props;
-
+const NotFoundPage: FC<PageProps> = () => {
   return (
     <Layout>
       <SEO title="404: Not found" />

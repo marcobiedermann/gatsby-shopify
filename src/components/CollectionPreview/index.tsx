@@ -4,7 +4,7 @@ import Image from '../Image';
 import * as styles from './style.module.css';
 
 interface Image {
-  src: string;
+  originalSrc: string;
 }
 
 export interface CollectionPreviewProps {
@@ -21,7 +21,7 @@ const CollectionPreview: FC<CollectionPreviewProps> = (props) => {
     <div className={styles.collectionPreview}>
       <figure>
         <Link to={`/collections/${handle}`}>
-          <Image src={image.src} alt={title} />
+          <Image src={image.originalSrc} alt={title} />
         </Link>
       </figure>
       <h3>

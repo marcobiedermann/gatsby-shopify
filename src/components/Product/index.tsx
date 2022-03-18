@@ -13,17 +13,16 @@ interface Image {
 
 interface Option {
   name: string;
-  shopifyId: string;
+  id: string;
   values: string[];
 }
 
 export interface ProductProps {
-  availableForSale: boolean;
   description: string;
   handle: string;
   images: Image[];
   options: Option[];
-  priceRange: {
+  priceRangeV2: {
     minVariantPrice: {
       amount: string;
       currencyCode: string;
@@ -40,7 +39,7 @@ export interface ProductProps {
 }
 
 const Product: FC<ProductProps> = (props) => {
-  const { description, images, options, priceRange, tags, title, vendor } = props;
+  const { description, images, options, priceRangeV2, tags, title, vendor } = props;
 
   return (
     <div className={styles.product}>
@@ -57,7 +56,7 @@ const Product: FC<ProductProps> = (props) => {
         <h1 className={styles.product__title}>{title}</h1>
         <h2>by {vendor}</h2>
         <div>
-          {priceRange.minVariantPrice.amount} {priceRange.minVariantPrice.currencyCode}
+          {priceRangeV2.minVariantPrice.amount} {priceRangeV2.minVariantPrice.currencyCode}
         </div>
         <div className={styles.product__description}>
           <p>{description}</p>
@@ -75,7 +74,7 @@ const Product: FC<ProductProps> = (props) => {
           {({ isSubmitting }) => (
             <Form>
               {options.map((option) => (
-                <div className="form__field" key={option.shopifyId}>
+                <div className="form__field" key={option.id}>
                   {option.values.length > 5 ? (
                     <>
                       <Label htmlFor={option.name}>{option.name}</Label>

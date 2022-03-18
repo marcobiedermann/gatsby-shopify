@@ -8,7 +8,7 @@ interface Image {
   originalSrc: string;
 }
 
-interface PriceRange {
+interface PriceRangeV2 {
   minVariantPrice: VariantPrice;
 }
 
@@ -19,8 +19,8 @@ interface VariantPrice {
 
 interface Product {
   handle: string;
-  images: Image[];
-  priceRange: PriceRange;
+  featuredImage: Image;
+  priceRangeV2: PriceRangeV2;
   shopifyId: string;
   title: string;
 }
@@ -55,10 +55,10 @@ export const query = graphql`
       description
       products {
         handle
-        images {
+        featuredImage {
           originalSrc
         }
-        priceRange {
+        priceRangeV2 {
           minVariantPrice {
             amount
             currencyCode
