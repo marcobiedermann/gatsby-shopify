@@ -2,12 +2,11 @@ import { Link, PageProps } from 'gatsby';
 import React, { FC } from 'react';
 import Grid from '../components/Grid';
 import Image from '../components/Image';
-import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const IndexPage: FC<PageProps> = () => {
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
       <Grid>
         <h1>Hi people</h1>
@@ -18,7 +17,7 @@ const IndexPage: FC<PageProps> = () => {
         </div>
         <Link to="/page-2/">Go to page 2</Link>
       </Grid>
-    </Layout>
+    </>
   );
 };
 
