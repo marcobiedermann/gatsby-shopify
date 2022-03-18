@@ -1,7 +1,6 @@
 import { graphql, PageProps } from 'gatsby';
 import React, { FC } from 'react';
 import Grid from '../../components/Grid';
-import Layout from '../../components/Layout';
 import Product from '../../components/Product';
 
 interface Image {
@@ -44,11 +43,11 @@ const ProductPage: FC<PageProps<DataProps>> = (props) => {
   } = props;
 
   return (
-    <Layout>
+    <>
       <Grid>
         <Product {...shopifyProduct} />
       </Grid>
-    </Layout>
+    </>
   );
 };
 

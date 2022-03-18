@@ -2,7 +2,6 @@ import { graphql, PageProps } from 'gatsby';
 import React, { FC } from 'react';
 import Collection from '../../components/Collection';
 import Grid from '../../components/Grid';
-import Layout from '../../components/Layout';
 
 interface Image {
   originalSrc: string;
@@ -41,11 +40,11 @@ const CollectionPage: FC<PageProps<DataProps>> = (props) => {
   } = props;
 
   return (
-    <Layout>
+    <>
       <Grid isFull>
         <Collection {...shopifyCollection} />
       </Grid>
-    </Layout>
+    </>
   );
 };
 
