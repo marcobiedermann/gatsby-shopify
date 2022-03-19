@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Link } from 'gatsby';
 import React from 'react';
 import { Route } from '../../constants/routes';
@@ -15,7 +15,7 @@ function Navigation(props: NavigationProps) {
   return (
     <nav className={styles.navigation}>
       <ul
-        className={classNames(styles.navigation__list, {
+        className={clsx(styles.navigation__list, {
           [styles.navigation__listInline]: inline,
         })}
       >
@@ -29,6 +29,6 @@ function Navigation(props: NavigationProps) {
       </ul>
     </nav>
   );
-};
+}
 
 export default Navigation;

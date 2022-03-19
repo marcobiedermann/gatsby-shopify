@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 import * as styles from './style.module.css';
 
@@ -12,12 +12,12 @@ function Grid(props: GridProps) {
 
   return (
     <div
-      className={classNames(styles.grid, {
+      className={clsx(styles.grid, {
         [styles.gridFull]: isFull,
       })}
       {...otherProps}
     />
   );
-};
+}
 
 export default Grid;
