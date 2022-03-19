@@ -12,13 +12,34 @@ interface PriceRangeV2 {
   minVariantPrice: VariantPrice;
 }
 
-interface Image {
-  originalSrc: string;
+interface Source {
+  srcSet: string;
+  sizes: string;
+  type: string;
+}
+
+type Layout = 'fixed' | 'fullWidth' | 'constrained';
+
+interface FeaturedImage {
+  altText: string;
+  gatsbyImageData: {
+    images: {
+      sources: Source[];
+      fallback: {
+        src: string;
+        srcSet: string;
+        sizes: string;
+      };
+    };
+    layout: Layout;
+    width: number;
+    height: number;
+  };
 }
 
 export interface ProductPreviewProps {
   handle: string;
-  featuredImage: Image;
+  featuredImage: FeaturedImage;
   priceRangeV2: PriceRangeV2;
   shopifyId: string;
   title: string;
@@ -31,7 +52,7 @@ const ProductPreview: FC<ProductPreviewProps> = (props) => {
     <div className={styles.productPreview}>
       <figure>
         <Link to={`/products/${handle}`}>
-          <Image src={featuredImage.originalSrc} alt={title} />
+          <Image {...featuredImage} />
         </Link>
       </figure>
       <h3>

@@ -3,8 +3,29 @@ import React, { FC } from 'react';
 import Image from '../Image';
 import * as styles from './style.module.css';
 
+interface Source {
+  srcSet: string;
+  sizes: string;
+  type: string;
+}
+
+type Layout = 'fixed' | 'fullWidth' | 'constrained';
+
 interface Image {
-  originalSrc: string;
+  altText: string;
+  gatsbyImageData: {
+    images: {
+      sources: Source[];
+      fallback: {
+        src: string;
+        srcSet: string;
+        sizes: string;
+      };
+    };
+    layout: Layout;
+    width: number;
+    height: number;
+  };
 }
 
 export interface CollectionPreviewProps {
@@ -21,7 +42,7 @@ const CollectionPreview: FC<CollectionPreviewProps> = (props) => {
     <div className={styles.collectionPreview}>
       <figure>
         <Link to={`/collections/${handle}`}>
-          <Image src={image.originalSrc} alt={title} />
+          <Image {...image} />
         </Link>
       </figure>
       <h3>

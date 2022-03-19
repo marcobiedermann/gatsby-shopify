@@ -1,9 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-interface Image {
-  originalSrc: string;
-}
-
 interface VariantPrice {
   amount: string;
   currencyCode: string;
@@ -13,9 +9,34 @@ interface PriceRangeV2 {
   minVariantPrice: VariantPrice;
 }
 
+interface Source {
+  srcSet: string;
+  sizes: string;
+  type: string;
+}
+
+type Layout = 'fixed' | 'fullWidth' | 'constrained';
+
+interface FeaturedImage {
+  altText: string;
+  gatsbyImageData: {
+    images: {
+      sources: Source[];
+      fallback: {
+        src: string;
+        srcSet: string;
+        sizes: string;
+      };
+    };
+    layout: Layout;
+    width: number;
+    height: number;
+  };
+}
+
 interface ShopifyProductQuery {
   handle: string;
-  featuredImage: Image;
+  featuredImage: FeaturedImage;
   priceRangeV2: PriceRangeV2;
   shopifyId: string;
   title: string;
@@ -39,7 +60,8 @@ export function useAllShopifyProduct() {
           node {
             handle
             featuredImage {
-              originalSrc
+              altText
+              gatsbyImageData
             }
             priceRangeV2 {
               minVariantPrice {

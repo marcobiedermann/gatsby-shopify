@@ -3,9 +3,30 @@ import React, { FC } from 'react';
 import Grid from '../../components/Grid';
 import Product from '../../components/Product';
 
+interface Source {
+  srcSet: string;
+  sizes: string;
+  type: string;
+}
+
+type Layout = 'fixed' | 'fullWidth' | 'constrained';
+
 interface Image {
+  altText: string;
+  gatsbyImageData: {
+    images: {
+      sources: Source[];
+      fallback: {
+        src: string;
+        srcSet: string;
+        sizes: string;
+      };
+    };
+    layout: Layout;
+    width: number;
+    height: number;
+  };
   id: string;
-  originalSrc: string;
 }
 
 interface Option {
@@ -57,8 +78,9 @@ export const query = graphql`
       description
       handle
       images {
+        altText
+        gatsbyImageData
         id
-        originalSrc
       }
       options {
         id

@@ -6,9 +6,30 @@ import Label from '../Label';
 import Tags from '../Tags';
 import * as styles from './style.module.css';
 
+interface Source {
+  srcSet: string;
+  sizes: string;
+  type: string;
+}
+
+type Layout = 'fixed' | 'fullWidth' | 'constrained';
+
 interface Image {
+  altText: string;
+  gatsbyImageData: {
+    images: {
+      sources: Source[];
+      fallback: {
+        src: string;
+        srcSet: string;
+        sizes: string;
+      };
+    };
+    layout: Layout;
+    width: number;
+    height: number;
+  };
   id: string;
-  originalSrc: string;
 }
 
 interface Option {
@@ -47,7 +68,7 @@ const Product: FC<ProductProps> = (props) => {
         <ul className={styles.product__images}>
           {images.map((image) => (
             <li key={image.id}>
-              <Image className={styles.product__image} src={image.originalSrc} alt={title} />
+              <Image className={styles.product__image} {...image} />
             </li>
           ))}
         </ul>
