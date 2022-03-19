@@ -3,8 +3,29 @@ import React, { FC } from 'react';
 import Collection from '../../components/Collection';
 import Grid from '../../components/Grid';
 
-interface Image {
-  originalSrc: string;
+interface Source {
+  srcSet: string;
+  sizes: string;
+  type: string;
+}
+
+type Layout = 'fixed' | 'fullWidth' | 'constrained';
+
+interface FeaturedImage {
+  altText: string;
+  gatsbyImageData: {
+    images: {
+      sources: Source[];
+      fallback: {
+        src: string;
+        srcSet: string;
+        sizes: string;
+      };
+    };
+    layout: Layout;
+    width: number;
+    height: number;
+  };
 }
 
 interface PriceRangeV2 {
@@ -18,7 +39,7 @@ interface VariantPrice {
 
 interface Product {
   handle: string;
-  featuredImage: Image;
+  featuredImage: FeaturedImage;
   priceRangeV2: PriceRangeV2;
   shopifyId: string;
   title: string;
@@ -55,7 +76,8 @@ export const query = graphql`
       products {
         handle
         featuredImage {
-          originalSrc
+          altText
+          gatsbyImageData
         }
         priceRangeV2 {
           minVariantPrice {

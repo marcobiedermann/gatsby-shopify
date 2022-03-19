@@ -1,7 +1,28 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
+interface Source {
+  srcSet: string;
+  sizes: string;
+  type: string;
+}
+
+type Layout = 'fixed' | 'fullWidth' | 'constrained';
+
 interface Image {
-  originalSrc: string;
+  altText: string;
+  gatsbyImageData: {
+    images: {
+      sources: Source[];
+      fallback: {
+        src: string;
+        srcSet: string;
+        sizes: string;
+      };
+    };
+    layout: Layout;
+    width: number;
+    height: number;
+  };
 }
 
 interface ShopifyCollectionQuery {
@@ -31,7 +52,8 @@ export function useAllShopifyCollection() {
             description
             handle
             image {
-              originalSrc
+              altText
+              gatsbyImageData
             }
             shopifyId
             title
