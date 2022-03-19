@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import ProductPreview, { ProductPreviewProps } from '../ProductPreview';
 import * as styles from './style.module.css';
 
@@ -6,7 +6,7 @@ export interface ProductsProps {
   products: ProductPreviewProps[];
 }
 
-const Products: FC<ProductsProps> = (props) => {
+function Products(props: ProductsProps) {
   const { products } = props;
 
   return (
@@ -23,6 +23,6 @@ const Products: FC<ProductsProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Products;

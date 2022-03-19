@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useSite } from '../../hooks/site';
 
@@ -14,7 +14,7 @@ export interface SEOProps {
   title: string;
 }
 
-const SEO: FC<SEOProps> = (props) => {
+function SEO(props: SEOProps) {
   const { description, lang = 'en', meta = [], title } = props;
   const { site } = useSite();
 
@@ -63,6 +63,6 @@ const SEO: FC<SEOProps> = (props) => {
       ].concat(meta)}
     />
   );
-};
+}
 
 export default SEO;

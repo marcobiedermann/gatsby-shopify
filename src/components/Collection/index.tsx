@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import ProductPreview, { ProductPreviewProps } from '../ProductPreview';
 import * as styles from './style.module.css';
 
@@ -9,7 +9,7 @@ export interface CollectionProps {
   title: string;
 }
 
-const Collection: FC<CollectionProps> = (props) => {
+function Collection(props: CollectionProps) {
   const { description, products, title } = props;
 
   return (
@@ -27,6 +27,6 @@ const Collection: FC<CollectionProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Collection;

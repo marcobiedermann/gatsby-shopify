@@ -43,7 +43,7 @@ interface AllShopifyCollectionQuery {
   };
 }
 
-export function useAllShopifyCollection() {
+function useAllShopifyCollection() {
   return useStaticQuery<AllShopifyCollectionQuery>(graphql`
     {
       allShopifyCollection(sort: { fields: [title] }) {
@@ -63,3 +63,5 @@ export function useAllShopifyCollection() {
     }
   `);
 }
+
+export { useAllShopifyCollection };

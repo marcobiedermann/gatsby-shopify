@@ -10,7 +10,7 @@ interface SiteQuery {
   };
 }
 
-export function useSite() {
+function useSite() {
   return useStaticQuery<SiteQuery>(graphql`
     {
       site {
@@ -23,3 +23,5 @@ export function useSite() {
     }
   `);
 }
+
+export { useSite };

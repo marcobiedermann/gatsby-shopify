@@ -1,7 +1,11 @@
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 
-const Tag: FC = (props) => {
+export interface TagProps {
+  children: ReactNode;
+}
+
+function Tag(props: TagProps) {
   return <span {...props} />;
-};
+}
 
 export default Tag;

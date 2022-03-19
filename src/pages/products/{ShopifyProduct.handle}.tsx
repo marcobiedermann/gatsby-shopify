@@ -1,5 +1,5 @@
 import { graphql, PageProps } from 'gatsby';
-import React, { FC } from 'react';
+import React from 'react';
 import Grid from '../../components/Grid';
 import Product from '../../components/Product';
 
@@ -58,7 +58,9 @@ export interface DataProps {
   };
 }
 
-const ProductPage: FC<PageProps<DataProps>> = (props) => {
+interface ProductPageProps extends PageProps<DataProps> {}
+
+function ProductPage(props: ProductPageProps) {
   const {
     data: { shopifyProduct },
   } = props;

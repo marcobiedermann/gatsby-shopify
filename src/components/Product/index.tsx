@@ -1,5 +1,5 @@
 import { Field, Form, Formik } from 'formik';
-import React, { FC } from 'react';
+import React from 'react';
 import Button from '../Button';
 import Image from '../Image';
 import Label from '../Label';
@@ -59,7 +59,7 @@ export interface ProductProps {
   vendor: string;
 }
 
-const Product: FC<ProductProps> = (props) => {
+function Product(props: ProductProps) {
   const { description, images, options, priceRangeV2, tags, title, vendor } = props;
 
   return (

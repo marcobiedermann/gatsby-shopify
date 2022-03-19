@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-import React, { FC } from 'react';
+import React from 'react';
 import { Route } from '../../constants/routes';
 import * as styles from './style.module.css';
 
@@ -9,7 +9,7 @@ export interface NavigationProps {
   routes: Route[];
 }
 
-const Navigation: FC<NavigationProps> = (props) => {
+function Navigation(props: NavigationProps) {
   const { inline, routes } = props;
 
   return (

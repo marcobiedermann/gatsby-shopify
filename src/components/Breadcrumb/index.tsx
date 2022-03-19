@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { FC } from 'react';
+import React from 'react';
 import * as styles from './style.module.css';
 
 export interface BreadcrumbItem {
@@ -11,7 +11,7 @@ export interface BreadcrumbProps {
   breadcrumbItems: BreadcrumbItem[];
 }
 
-const Breadcrumb: FC<BreadcrumbProps> = (props) => {
+function Breadcrumb(props: BreadcrumbProps) {
   const { breadcrumbItems } = props;
 
   return (

@@ -1,10 +1,12 @@
 import { PageProps } from 'gatsby';
-import React, { FC } from 'react';
+import React from 'react';
 import Collections from '../components/Collections';
 import Grid from '../components/Grid';
 import { useAllShopifyCollection } from '../hooks/collection';
 
-const CollectionsPage: FC<PageProps> = () => {
+interface CollectionsPageProps extends PageProps {}
+
+function CollectionsPage(_props: CollectionsPageProps) {
   const { allShopifyCollection } = useAllShopifyCollection();
 
   return (

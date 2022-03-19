@@ -1,12 +1,13 @@
 import classNames from 'classnames';
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 import * as styles from './style.module.css';
 
 export interface GridProps {
+  children: ReactNode;
   isFull?: boolean;
 }
 
-const Grid: FC<GridProps> = (props) => {
+function Grid(props: GridProps) {
   const { isFull, ...otherProps } = props;
 
   return (
