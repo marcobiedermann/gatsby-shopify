@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`collection preview component should render correctly 1`] = `
-<div>
+<div
+  class="collectionPreview"
+>
   <figure>
     <a
       href="/collections/collection"

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`header component should render correctly 1`] = `
-<header>
+<header
+  class="header"
+>
   Header
 </header>
 `;

@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`breadcrumb component should render correctly 1`] = `
-<ol>
-  <li>
+<ol
+  class="breadcrumb"
+>
+  <li
+    class="breadcrumb__item"
+  >
     <a
       href="/"
     >

@@ -32,6 +32,6 @@ function Image(props: ImageProps) {
   const { altText, gatsbyImageData, ...otherProps } = props;
 
   return <GatsbyImage image={gatsbyImageData} alt={altText} {...otherProps} />;
-};
+}
 
 export default Image;

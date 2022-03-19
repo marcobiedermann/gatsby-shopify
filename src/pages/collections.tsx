@@ -18,6 +18,6 @@ function CollectionsPage(_props: CollectionsPageProps) {
       </Grid>
     </>
   );
-};
+}
 
 export default CollectionsPage;

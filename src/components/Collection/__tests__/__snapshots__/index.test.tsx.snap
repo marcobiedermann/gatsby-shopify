@@ -1,17 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`collection component should render correctly 1`] = `
-<ul>
+<ul
+  class="collection"
+>
   <li>
     <div>
-      <h1>
+      <h1
+        class="collection__title"
+      >
         Collection Title
       </h1>
       <p />
     </div>
   </li>
   <li>
-    <div>
+    <div
+      class="productPreview"
+    >
       <figure>
         <a
           href="/products/product"

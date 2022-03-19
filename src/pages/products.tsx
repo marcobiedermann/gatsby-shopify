@@ -16,6 +16,6 @@ function ProductsPage(_props: ProductsPageProps) {
       </Grid>
     </>
   );
-};
+}
 
 export default ProductsPage;

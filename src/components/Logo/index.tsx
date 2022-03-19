@@ -7,6 +7,6 @@ export interface LogoProps {
 
 function Logo(props: LogoProps) {
   return <Link to="/" {...props} />;
-};
+}
 
 export default Logo;

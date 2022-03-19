@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import * as styles from './style.module.css';
+import { breadcrumb, breadcrumb__item } from './style.module.css';
 
 export interface BreadcrumbItem {
   name: string;
@@ -15,14 +15,14 @@ function Breadcrumb(props: BreadcrumbProps) {
   const { breadcrumbItems } = props;
 
   return (
-    <ol className={styles.breadcrumb}>
+    <ol className={breadcrumb}>
       {breadcrumbItems.map((breadcrumbItem) => (
-        <li className={styles.breadcrumb__item} key={breadcrumbItem.path}>
+        <li className={breadcrumb__item} key={breadcrumbItem.path}>
           <Link to={breadcrumbItem.path}>{breadcrumbItem.name}</Link>
         </li>
       ))}
     </ol>
   );
-};
+}
 
 export default Breadcrumb;

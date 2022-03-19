@@ -15,6 +15,6 @@ function NotFoundPage(_props: NotFountPageProps) {
       </Grid>
     </>
   );
-};
+}
 
 export default NotFoundPage;

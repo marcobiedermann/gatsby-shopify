@@ -68,7 +68,7 @@ function CollectionPage(props: CollectionPageProps) {
       </Grid>
     </>
   );
-};
+}
 
 export const query = graphql`
   query ($id: String!) {

@@ -4,7 +4,14 @@ import Button from '../Button';
 import Image from '../Image';
 import Label from '../Label';
 import Tags from '../Tags';
-import * as styles from './style.module.css';
+import {
+  product,
+  product__description,
+  product__image,
+  product__images,
+  product__options,
+  product__title,
+} from './style.module.css';
 
 interface Source {
   srcSet: string;
@@ -63,23 +70,23 @@ function Product(props: ProductProps) {
   const { description, images, options, priceRangeV2, tags, title, vendor } = props;
 
   return (
-    <div className={styles.product}>
+    <div className={product}>
       <div style={{ width: '50%' }}>
-        <ul className={styles.product__images}>
+        <ul className={product__images}>
           {images.map((image) => (
             <li key={image.id}>
-              <Image className={styles.product__image} {...image} />
+              <Image className={product__image} {...image} />
             </li>
           ))}
         </ul>
       </div>
       <div style={{ paddingLeft: '6em', paddingRight: '6em', width: '50%' }}>
-        <h1 className={styles.product__title}>{title}</h1>
+        <h1 className={product__title}>{title}</h1>
         <h2>by {vendor}</h2>
         <div>
           {priceRangeV2.minVariantPrice.amount} {priceRangeV2.minVariantPrice.currencyCode}
         </div>
-        <div className={styles.product__description}>
+        <div className={product__description}>
           <p>{description}</p>
         </div>
         <Tags tags={tags} />
@@ -115,7 +122,7 @@ function Product(props: ProductProps) {
                   ) : (
                     <fieldset>
                       <legend>{option.name}</legend>
-                      <div className={styles.product__options}>
+                      <div className={product__options}>
                         {option.values.map((value) => (
                           <div key={value}>
                             <Label htmlFor={value}>{value}</Label>
@@ -149,6 +156,6 @@ function Product(props: ProductProps) {
       </div>
     </div>
   );
-};
+}
 
 export default Product;

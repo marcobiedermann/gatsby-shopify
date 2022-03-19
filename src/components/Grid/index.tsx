@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import React, { ReactNode } from 'react';
-import * as styles from './style.module.css';
+import { grid, gridFull } from './style.module.css';
 
 export interface GridProps {
   children: ReactNode;
@@ -12,8 +12,8 @@ function Grid(props: GridProps) {
 
   return (
     <div
-      className={clsx(styles.grid, {
-        [styles.gridFull]: isFull,
+      className={clsx(grid, {
+        [gridFull]: isFull,
       })}
       {...otherProps}
     />

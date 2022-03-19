@@ -72,7 +72,7 @@ function ProductPage(props: ProductPageProps) {
       </Grid>
     </>
   );
-};
+}
 
 export const query = graphql`
   query ($id: String!) {

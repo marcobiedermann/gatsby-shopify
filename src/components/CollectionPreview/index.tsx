@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import Image from '../Image';
-import * as styles from './style.module.css';
+import { collectionPreview } from './style.module.css';
 
 interface Source {
   srcSet: string;
@@ -39,7 +39,7 @@ function CollectionPreview(props: CollectionPreviewProps) {
   const { handle, image, title } = props;
 
   return (
-    <div className={styles.collectionPreview}>
+    <div className={collectionPreview}>
       <figure>
         <Link to={`/collections/${handle}`}>
           <Image {...image} />
@@ -50,6 +50,6 @@ function CollectionPreview(props: CollectionPreviewProps) {
       </h3>
     </div>
   );
-};
+}
 
 export default CollectionPreview;
