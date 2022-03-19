@@ -1,10 +1,12 @@
 import { PageProps } from 'gatsby';
-import React, { FC } from 'react';
+import React from 'react';
 import Grid from '../components/Grid';
 import Products from '../components/Products';
 import { useAllShopifyProduct } from '../hooks/product';
 
-const ProductsPage: FC<PageProps> = () => {
+interface ProductsPageProps extends PageProps {}
+
+function ProductsPage(_props: ProductsPageProps) {
   const { allShopifyProduct } = useAllShopifyProduct();
 
   return (

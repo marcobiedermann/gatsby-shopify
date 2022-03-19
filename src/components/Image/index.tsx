@@ -1,5 +1,5 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
-import React, { FC } from 'react';
+import React from 'react';
 
 interface Source {
   srcSet: string;
@@ -28,7 +28,7 @@ export interface ImageProps {
   id?: string;
 }
 
-const Image: FC<ImageProps> = (props) => {
+function Image(props: ImageProps) {
   const { altText, gatsbyImageData, ...otherProps } = props;
 
   return <GatsbyImage image={gatsbyImageData} alt={altText} {...otherProps} />;

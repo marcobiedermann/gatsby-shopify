@@ -52,7 +52,7 @@ interface AllShopifyProductQuery {
   };
 }
 
-export function useAllShopifyProduct() {
+function useAllShopifyProduct() {
   return useStaticQuery<AllShopifyProductQuery>(graphql`
     {
       allShopifyProduct(sort: { fields: [title] }) {
@@ -77,3 +77,5 @@ export function useAllShopifyProduct() {
     }
   `);
 }
+
+export { useAllShopifyProduct };

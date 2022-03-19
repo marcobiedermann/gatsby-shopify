@@ -1,7 +1,11 @@
 import { Link } from 'gatsby';
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 
-const Logo: FC = (props) => {
+export interface LogoProps {
+  children: ReactNode;
+}
+
+function Logo(props: LogoProps) {
   return <Link to="/" {...props} />;
 };
 

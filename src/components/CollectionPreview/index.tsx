@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { FC } from 'react';
+import React from 'react';
 import Image from '../Image';
 import * as styles from './style.module.css';
 
@@ -35,7 +35,7 @@ export interface CollectionPreviewProps {
   title: string;
 }
 
-const CollectionPreview: FC<CollectionPreviewProps> = (props) => {
+function CollectionPreview(props: CollectionPreviewProps) {
   const { handle, image, title } = props;
 
   return (

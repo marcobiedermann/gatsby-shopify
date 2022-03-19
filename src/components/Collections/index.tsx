@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import CollectionPreview, { CollectionPreviewProps } from '../CollectionPreview';
 import * as styles from './style.module.css';
 
@@ -6,7 +6,7 @@ export interface CollectionsProps {
   collections: CollectionPreviewProps[];
 }
 
-const Collections: FC<CollectionsProps> = (props) => {
+function Collections(props: CollectionsProps) {
   const { collections } = props;
 
   return (
@@ -23,6 +23,6 @@ const Collections: FC<CollectionsProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Collections;
