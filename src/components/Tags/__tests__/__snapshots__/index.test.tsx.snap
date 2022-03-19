@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tags component should render correctly 1`] = `
-<ul>
+<ul
+  class="tags"
+>
   <li>
     <span>
       tag

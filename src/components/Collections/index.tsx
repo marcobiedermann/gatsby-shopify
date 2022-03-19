@@ -1,6 +1,6 @@
 import React from 'react';
 import CollectionPreview, { CollectionPreviewProps } from '../CollectionPreview';
-import * as styles from './style.module.css';
+import { collections as collectionsStyles, collections__title } from './style.module.css';
 
 export interface CollectionsProps {
   collections: CollectionPreviewProps[];
@@ -10,10 +10,10 @@ function Collections(props: CollectionsProps) {
   const { collections } = props;
 
   return (
-    <ul className={styles.collections}>
+    <ul className={collectionsStyles}>
       <li>
         <div>
-          <h1 className={styles.collections__title}>Collections</h1>
+          <h1 className={collections__title}>Collections</h1>
         </div>
       </li>
       {collections.map((collection) => (

@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React, { FC } from 'react';
 import Image from '../Image';
-import * as styles from './style.module.css';
+import { productPreview } from './style.module.css';
 
 interface VariantPrice {
   amount: string;
@@ -49,7 +49,7 @@ const ProductPreview: FC<ProductPreviewProps> = (props) => {
   const { handle, featuredImage, title, priceRangeV2 } = props;
 
   return (
-    <div className={styles.productPreview}>
+    <div className={productPreview}>
       <figure>
         <Link to={`/products/${handle}`}>
           <Image {...featuredImage} />

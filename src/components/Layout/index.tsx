@@ -6,7 +6,7 @@ import Header from '../Header';
 import Logo from '../Logo';
 import Main from '../Main';
 import Navigation from '../Navigation';
-import * as styles from './style.module.css';
+import { layout } from './style.module.css';
 
 export interface LayoutProps {
   children: ReactNode;
@@ -16,7 +16,7 @@ function Layout(props: LayoutProps) {
   const { children } = props;
 
   return (
-    <div className={styles.layout}>
+    <div className={layout}>
       <Header>
         <Logo>shopifyShop.name</Logo>
         <Navigation inline routes={MAIN} />

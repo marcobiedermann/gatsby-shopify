@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`main component should render correctly 1`] = `
-<main>
+<main
+  class="main"
+>
   Main
 </main>
 `;

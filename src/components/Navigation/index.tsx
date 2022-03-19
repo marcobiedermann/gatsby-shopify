@@ -2,7 +2,12 @@ import clsx from 'clsx';
 import { Link } from 'gatsby';
 import React from 'react';
 import { Route } from '../../constants/routes';
-import * as styles from './style.module.css';
+import {
+  navigation,
+  navigation__link,
+  navigation__list,
+  navigation__listInline,
+} from './style.module.css';
 
 export interface NavigationProps {
   inline?: boolean;
@@ -13,15 +18,15 @@ function Navigation(props: NavigationProps) {
   const { inline, routes } = props;
 
   return (
-    <nav className={styles.navigation}>
+    <nav className={navigation}>
       <ul
-        className={clsx(styles.navigation__list, {
-          [styles.navigation__listInline]: inline,
+        className={clsx(navigation__list, {
+          [navigation__listInline]: inline,
         })}
       >
         {routes.map((route) => (
           <li key={route.path}>
-            <Link className={styles.navigation__link} to={route.path}>
+            <Link className={navigation__link} to={route.path}>
               {route.name}
             </Link>
           </li>

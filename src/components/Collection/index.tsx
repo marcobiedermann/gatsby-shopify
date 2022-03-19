@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductPreview, { ProductPreviewProps } from '../ProductPreview';
-import * as styles from './style.module.css';
+import { collection, collection__title } from './style.module.css';
 
 export interface CollectionProps {
   description: string;
@@ -13,10 +13,10 @@ function Collection(props: CollectionProps) {
   const { description, products, title } = props;
 
   return (
-    <ul className={styles.collection}>
+    <ul className={collection}>
       <li>
         <div>
-          <h1 className={styles.collection__title}>{title}</h1>
+          <h1 className={collection__title}>{title}</h1>
           <p>{description}</p>
         </div>
       </li>
