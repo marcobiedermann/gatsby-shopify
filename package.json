@@ -24,7 +24,7 @@
     "@types/jest": "^27.5.2",
     "@types/node": "^18.11.8",
     "@types/react": "^17.0.47",
-    "@types/react-helmet": "^6.1.5",
+    "@types/react-helmet": "^6.1.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "prettier": "^2.7.1",
