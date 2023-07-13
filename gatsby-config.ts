@@ -1,6 +1,6 @@
+import { resolve } from 'node:path';
 import dotenv from 'dotenv';
 import type { GatsbyConfig } from 'gatsby';
-import { resolve } from 'path';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
